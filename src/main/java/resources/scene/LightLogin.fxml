@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="lightBkg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.LoginController">
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+   <children>
+      <JFXButton fx:id="loginBtn" buttonType="RAISED" layoutX="284.0" layoutY="292.0" ripplerFill="WHITE" style="-fx-background-color: rgba(0, 0, 256, .95);" text="Log In" textFill="WHITE">
+         <font>
+            <Font name="Trebuchet MS" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXDialog layoutX="210.0" layoutY="138.0" prefHeight="0.0" prefWidth="155.0" />
+      <JFXTextField fx:id="passField" focusColor="#00c8ff" labelFloat="true" layoutX="250.0" layoutY="220.0" prefHeight="23.0" prefWidth="123.0" promptText=" Password" style="-fx-background-color: rgba(0, 100, 200, .1);" unFocusColor="#38d0e7">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </JFXTextField>
+      <Label fx:id="label" layoutX="275.0" layoutY="63.0" text="LOGIN" textAlignment="CENTER">
+         <font>
+            <Font name="Tw Cen MT" size="25.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="userField" focusColor="#00c8ff" labelFloat="true" layoutX="250.0" layoutY="156.0" promptText=" Username" style="-fx-background-color: rgba(0, 100, 200, .10);" unFocusColor="#38d0e7">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <font>
+            <Font name="Trebuchet MS" size="12.0" />
+         </font>
+      </JFXTextField>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>
