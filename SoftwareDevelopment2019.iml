@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="jfoenix-8.0.8" level="project" />
+    <orderEntry type="library" exported="" name="sqlite-jdbc-3.23.1" level="project" />
   </component>
 </module>
