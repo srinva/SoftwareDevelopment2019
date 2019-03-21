@@ -4,7 +4,15 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import main.java.app.DBConnect;
 import main.java.app.Var;
 
@@ -20,18 +28,18 @@ public class LoginController {
     @FXML
     public static JFXButton loginBtn;
     @FXML
-    public static JFXTextField userField;
+    public JFXTextField userField;
     @FXML
-    public static JFXPasswordField passField;
+    public JFXPasswordField passField;
     @FXML
     public static Label label;
 
     @FXML
-    public void onLoginClicked() {
+    public void onLoginClicked() throws SQLException {
         Connection conn = null;
         try {
             // db parameters
-            String url = "jdbc:sqlite:S:\\SoftwareDevelopment2019\\SoftwareDev.db";
+            String url = "jdbc:sqlite:C:\\Users\\Srinath\\com.srinath.coding\\SoftwareDevelopment2019\\SoftwareDev.db";
             // create a connection to the database
             conn = DriverManager.getConnection(url);
             Statement statement = conn.createStatement();
@@ -42,25 +50,29 @@ public class LoginController {
             while(rs.next())
             {
                 // read the result set
-                System.out.println("username = " + rs.getString("username"));
-                System.out.println("password = " + rs.getString("password"));
-                Var.username = rs.getString(0);
-                Var.password = rs.getString(0);
-                if (Var.username.equals(userField.getText())) {
-                    if (Var.password.equals(passField.getText())) {
-                        System.out.println("login successful");
-                    } else {
-                        System.out.println("incorrect password");
+                if (userField.getText().equals(rs.getString("username"))) {
+                    System.out.println("username found");
+                    if (passField.getText().equals(rs.getString("password"))) {
+                        System.out.println("Succesfully logged in");
+                        Parent dash = FXMLLoader.load(getClass().getResource("/main/java/resources/scene/LandingPage.fxml"));
+                        Stage primaryStage = new Stage();
+                        Scene scene = new Scene(dash, 600, 400);
+                        primaryStage.setScene(scene);
+                        primaryStage.show();
                         break;
+                    } else {
+                        System.out.print("incorrect password or username");
                     }
                 } else {
-                    System.out.println("login failed");
+                    System.out.println("incorrect password or username");
                 }
 
             }
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
         } finally {
             try {
                 if (conn != null) {
@@ -70,5 +82,8 @@ public class LoginController {
                 System.out.println(ex.getMessage());
             }
         }
+
+
     }
+
 }

@@ -11,7 +11,7 @@ public class DBConnect {
         Connection conn = null;
         try {
             // db parameters
-            String url = "jdbc:sqlite:S:\\SoftwareDevelopment2019\\SoftwareDev.db";
+            String url = "jdbc:sqlite:C:\\Users\\Srinath\\com.srinath.coding\\SoftwareDevelopment2019\\SoftwareDev.db";
             // create a connection to the database
             conn = DriverManager.getConnection(url);
             Statement statement = conn.createStatement();

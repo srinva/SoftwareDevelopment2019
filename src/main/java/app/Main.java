@@ -10,7 +10,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/main/java/resources/scene/LightLogin.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/main/java/resources/scene/LandingPage.fxml"));
         primaryStage.setTitle("Login");
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
