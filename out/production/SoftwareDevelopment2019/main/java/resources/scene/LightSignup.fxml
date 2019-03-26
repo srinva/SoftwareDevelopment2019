@@ -14,7 +14,7 @@
       <Cursor fx:constant="DEFAULT" />
    </cursor>
    <children>
-      <JFXButton fx:id="signupBtn" buttonType="RAISED" layoutX="280.0" layoutY="297.0" ripplerFill="WHITE" style="-fx-background-color: rgba(0, 0, 256, .95);" text="Sign Up" textFill="WHITE">
+      <JFXButton onAction="#onSignup" fx:id="signupBtn" buttonType="RAISED" layoutX="280.0" layoutY="297.0" ripplerFill="WHITE" style="-fx-background-color: rgba(0, 0, 256, .95);" text="Sign Up" textFill="WHITE">
          <font>
             <Font name="Trebuchet MS" size="13.0" />
          </font>
