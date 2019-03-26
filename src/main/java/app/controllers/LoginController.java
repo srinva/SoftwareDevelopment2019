@@ -8,13 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import main.java.app.DBConnect;
-import main.java.app.Var;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -54,9 +48,9 @@ public class LoginController {
                     System.out.println("username found");
                     if (passField.getText().equals(rs.getString("password"))) {
                         System.out.println("Succesfully logged in");
-                        Parent dash = FXMLLoader.load(getClass().getResource("/main/java/resources/scene/LandingPage.fxml"));
+                        Parent dash = FXMLLoader.load(getClass().getResource("/main/java/resources/scene/Dashboard.fxml"));
                         Stage primaryStage = new Stage();
-                        Scene scene = new Scene(dash, 600, 400);
+                        Scene scene = new Scene(dash, 610, 409);
                         primaryStage.setScene(scene);
                         primaryStage.show();
                         break;
