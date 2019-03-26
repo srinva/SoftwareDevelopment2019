@@ -28,7 +28,11 @@ public class LandingPageController {
     }
 
     @FXML
-    public void onSignup() {
-
+    public void onSignup() throws IOException {
+        Parent log = FXMLLoader.load(getClass().getResource("/main/java/resources/scene/LightSignup.fxml"));
+        Stage primaryStage = new Stage();
+        Scene scene = new Scene(log, 600, 400);
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 }
