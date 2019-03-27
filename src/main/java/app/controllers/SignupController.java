@@ -26,17 +26,23 @@ public class SignupController {
 
     @FXML
     public void onSignup() throws SQLException {
-        Connection conn = null;
-        String url = "jdbc:sqlite:C:\\Users\\Srinath\\com.srinath.coding\\SoftwareDevelopment2019\\SoftwareDev.db";
-        try {
-            conn = DriverManager.getConnection(url);
-        } catch (SQLException e) {
-            e.printStackTrace();
+        if (userField.getText().equals("") || passField.getText().equals("")) {
+            System.out.println("empty fields");
+        } else {
+            if (confField.getText().equals(passField.getText())) {
+                Connection conn = null;
+                String url = "jdbc:sqlite:C:\\Users\\Srinath\\com.srinath.coding\\SoftwareDevelopment2019\\SoftwareDev.db";
+                try {
+                    conn = DriverManager.getConnection(url);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                Statement statement = conn.createStatement();
+
+
+                ResultSet rs = statement.executeQuery("select * from users");
+                statement.executeUpdate("insert into users (username, password) values('" + userField.getText().toString() + "', '" + passField.getText().toString() + "')");
+            }
         }
-        Statement statement = conn.createStatement();
-
-
-        ResultSet rs = statement.executeQuery("select * from users");
-        statement.executeUpdate("insert into users (username, password) values('" + userField.getText().toString() + "', '" + passField.getText().toString() + "')");
-    }
+      }
 }
