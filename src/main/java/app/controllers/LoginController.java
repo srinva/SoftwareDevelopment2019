@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import main.java.app.Var;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -26,7 +27,9 @@ public class LoginController {
     @FXML
     public JFXPasswordField passField;
     @FXML
-    public static Label label;
+    public Label label;
+    @FXML
+    public Label indicator;
 
     @FXML
     public void onLoginClicked() throws SQLException {
@@ -35,10 +38,10 @@ public class LoginController {
             // db parameters
             String url = "jdbc:sqlite:C:\\Users\\Srinath\\com.srinath.coding\\SoftwareDevelopment2019\\SoftwareDev.db";
             // create a connection to the database
-            conn = DriverManager.getConnection(url);
+            conn = DriverManager.getConnection(Var.PCURL);
             Statement statement = conn.createStatement();
 
-            System.out.println("Connection to SQLite has been established.");
+            //System.out.println("Connection to SQLite has been established.");
 
             ResultSet rs = statement.executeQuery("select * from users");
             while(rs.next())
@@ -55,10 +58,10 @@ public class LoginController {
                         primaryStage.show();
                         break;
                     } else {
-                        System.out.print("incorrect password or username");
+                        indicator.setText("Incorrect Password or Username");
                     }
                 } else {
-                    System.out.println("incorrect password or username");
+                    indicator.setText("Incorrect Password or Username");
                 }
 
             }
