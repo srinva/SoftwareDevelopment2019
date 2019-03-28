@@ -56,6 +56,7 @@ public class LoginController {
                         Scene scene = new Scene(dash, 610, 409);
                         primaryStage.setScene(scene);
                         primaryStage.show();
+
                         break;
                     } else {
                         indicator.setText("Incorrect Password or Username");
