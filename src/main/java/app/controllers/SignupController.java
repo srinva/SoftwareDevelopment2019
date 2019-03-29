@@ -14,6 +14,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 /**
@@ -49,6 +50,7 @@ public class SignupController implements Initializable {
                 }
                 Statement statement = conn.createStatement();
 
+                Var.id = new Random().nextInt(10000);
 
                 statement.executeUpdate("insert into users (username, password) values('" + userField.getText().toString() + "', '" + passField.getText().toString() + "')");
 

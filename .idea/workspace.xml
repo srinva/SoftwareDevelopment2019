@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../SoftwareDevelopment2019/SoftwareDev.mwb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../SoftwareDevelopment2019/SoftwareDev.mwb.bak" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/Habit.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/NewHabitController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SoftwareDevelopment2019/SoftwareDev.db" afterPath="$PROJECT_DIR$/../SoftwareDevelopment2019/SoftwareDev.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SoftwareDevelopment2019/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../SoftwareDevelopment2019/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/Var.java" afterPath="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/Var.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/DashboardController.java" afterPath="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/DashboardController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/LoginController.java" afterPath="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/LoginController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/SignupController.java" afterPath="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/SignupController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/resources/scene/Dashboard.fxml" afterPath="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/resources/scene/Dashboard.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -70,18 +73,8 @@
           <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/LoginController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="677">
-                  <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SignupController.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/SignupController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="149">
-                  <caret line="45" column="64" lean-forward="false" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
+                <state relative-caret-position="918">
+                  <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -89,12 +82,88 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="SignupController.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/SignupController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="881">
+                  <caret line="52" column="25" lean-forward="false" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Habit.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/Habit.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="578">
+                  <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+                  <folding>
+                    <element signature="e#193#194#0" expanded="true" />
+                    <element signature="e#222#223#0" expanded="true" />
+                    <element signature="e#263#264#0" expanded="true" />
+                    <element signature="e#299#300#0" expanded="true" />
+                    <element signature="e#329#330#0" expanded="true" />
+                    <element signature="e#358#359#0" expanded="true" />
+                    <element signature="e#399#400#0" expanded="true" />
+                    <element signature="e#435#436#0" expanded="true" />
+                    <element signature="e#471#472#0" expanded="true" />
+                    <element signature="e#503#504#0" expanded="true" />
+                    <element signature="e#553#554#0" expanded="true" />
+                    <element signature="e#595#596#0" expanded="true" />
+                    <element signature="e#646#647#0" expanded="true" />
+                    <element signature="e#679#680#0" expanded="true" />
+                    <element signature="e#707#708#0" expanded="true" />
+                    <element signature="e#739#740#0" expanded="true" />
+                    <element signature="e#767#768#0" expanded="true" />
+                    <element signature="e#809#810#0" expanded="true" />
+                    <element signature="e#843#844#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="NewHabitController.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/NewHabitController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="136">
+                  <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="Var.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/Var.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="7" column="133" lean-forward="false" selection-start-line="7" selection-start-column="133" selection-end-line="7" selection-end-column="133" />
+                <state relative-caret-position="204">
+                  <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DashboardController.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/DashboardController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1136">
+                  <caret line="76" column="22" lean-forward="false" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#600#601#0" expanded="true" />
+                    <element signature="e#626#627#0" expanded="true" />
+                    <element signature="e#666#667#0" expanded="true" />
+                    <element signature="e#692#693#0" expanded="true" />
+                    <element signature="e#733#734#0" expanded="true" />
+                    <element signature="e#759#760#0" expanded="true" />
+                    <element signature="e#799#800#0" expanded="true" />
+                    <element signature="e#825#826#0" expanded="true" />
+                    <element signature="e#865#866#0" expanded="true" />
+                    <element signature="e#891#892#0" expanded="true" />
+                    <element signature="e#930#931#0" expanded="true" />
+                    <element signature="e#956#957#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -102,8 +171,8 @@
           <file leaf-file-name="LandingPageController.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/LandingPageController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+                <state relative-caret-position="238">
+                  <caret line="21" column="46" lean-forward="true" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
                   <folding />
                 </state>
               </provider>
@@ -138,24 +207,37 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Dashboard.fxml" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Dashboard.fxml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/resources/scene/Dashboard.fxml">
-              <provider editor-type-id="text-editor">
-                <state relative-caret-position="617">
-                  <caret line="38" column="62" lean-forward="false" selection-start-line="38" selection-start-column="62" selection-end-line="38" selection-end-column="62" />
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="209">
+                  <caret line="14" column="326" lean-forward="false" selection-start-line="14" selection-start-column="326" selection-end-line="14" selection-end-column="326" />
                   <folding />
                 </state>
               </provider>
-              <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+              <provider editor-type-id="JavaFX-Scene-Builder">
                 <state />
               </provider>
             </entry>
           </file>
           <file leaf-file-name="LightSignup.fxml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/resources/scene/LightSignup.fxml">
-              <provider editor-type-id="text-editor">
+              <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="833">
                   <caret line="49" column="151" lean-forward="false" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="151" />
+                  <folding />
+                </state>
+              </provider>
+              <provider editor-type-id="JavaFX-Scene-Builder">
+                <state />
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="NewHabit.fxml" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/resources/scene/NewHabit.fxml">
+              <provider editor-type-id="text-editor">
+                <state relative-caret-position="204">
+                  <caret line="12" column="358" lean-forward="false" selection-start-line="12" selection-start-column="358" selection-end-line="12" selection-end-column="358" />
                   <folding />
                 </state>
               </provider>
@@ -200,11 +282,15 @@
         <option value="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/Main.java" />
         <option value="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/LandingPageController.java" />
         <option value="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/resources/scene/LightSignup.fxml" />
-        <option value="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/Var.java" />
-        <option value="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/SignupController.java" />
         <option value="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/resources/scene/LightLogin.fxml" />
-        <option value="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/resources/scene/Dashboard.fxml" />
+        <option value="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/NewHabitController.java" />
         <option value="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/LoginController.java" />
+        <option value="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/SignupController.java" />
+        <option value="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/Habit.java" />
+        <option value="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/resources/scene/NewHabit.fxml" />
+        <option value="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/resources/scene/Dashboard.fxml" />
+        <option value="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/Var.java" />
+        <option value="$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/DashboardController.java" />
       </list>
     </option>
   </component>
@@ -602,7 +688,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49654642" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49654642" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -646,35 +732,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/resources/scene/LightLogin.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="3" lean-forward="false" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/DBConnect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/SignupController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -721,7 +778,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -759,7 +818,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1525">
           <caret line="61" column="30" lean-forward="true" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -795,7 +856,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1425">
           <caret line="57" column="19" lean-forward="false" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -803,7 +866,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -853,7 +918,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -873,7 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/DashboardController.java" />
     <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -882,31 +948,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/resources/scene/LandingPage.fxml" />
-    <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/LandingPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/Var.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="133" lean-forward="false" selection-start-line="7" selection-start-column="133" selection-end-line="7" selection-end-column="133" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/resources/scene/LightSignup.fxml">
-      <provider editor-type-id="text-editor">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
           <caret line="49" column="151" lean-forward="false" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="151" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+      <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/LandingPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="21" column="46" lean-forward="true" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/resources/scene/LightLogin.fxml">
@@ -921,32 +979,111 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/resources/scene/Dashboard.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="38" column="62" lean-forward="false" selection-start-line="38" selection-start-column="62" selection-end-line="38" selection-end-column="62" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="14" column="326" lean-forward="false" selection-start-line="14" selection-start-column="326" selection-end-line="14" selection-end-column="326" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+      <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="677">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="918">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/SignupController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="45" column="64" lean-forward="false" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
+        <state relative-caret-position="881">
+          <caret line="52" column="25" lean-forward="false" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/Habit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+          <folding>
+            <element signature="e#193#194#0" expanded="true" />
+            <element signature="e#222#223#0" expanded="true" />
+            <element signature="e#263#264#0" expanded="true" />
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#358#359#0" expanded="true" />
+            <element signature="e#399#400#0" expanded="true" />
+            <element signature="e#435#436#0" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#553#554#0" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+            <element signature="e#646#647#0" expanded="true" />
+            <element signature="e#679#680#0" expanded="true" />
+            <element signature="e#707#708#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
+            <element signature="e#767#768#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="true" />
+            <element signature="e#843#844#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/NewHabitController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/Var.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/app/controllers/DashboardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1136">
+          <caret line="76" column="22" lean-forward="false" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#600#601#0" expanded="true" />
+            <element signature="e#626#627#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+            <element signature="e#692#693#0" expanded="true" />
+            <element signature="e#733#734#0" expanded="true" />
+            <element signature="e#759#760#0" expanded="true" />
+            <element signature="e#799#800#0" expanded="true" />
+            <element signature="e#825#826#0" expanded="true" />
+            <element signature="e#865#866#0" expanded="true" />
+            <element signature="e#891#892#0" expanded="true" />
+            <element signature="e#930#931#0" expanded="true" />
+            <element signature="e#956#957#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SoftwareDevelopment2019/src/main/java/resources/scene/NewHabit.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="358" lean-forward="false" selection-start-line="12" selection-start-column="358" selection-end-line="12" selection-end-column="358" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
   </component>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="lightBkg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.DashboardController">
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+   <children>
+      <JFXDialog layoutX="210.0" layoutY="138.0" prefHeight="0.0" prefWidth="155.0" />
+      <Label fx:id="label" layoutX="49.0" layoutY="22.0" text="CREATE NEW HABIT" textAlignment="CENTER">
+         <font>
+            <Font name="Tw Cen MT" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="indicator" alignment="BOTTOM_CENTER" layoutX="213.0" layoutY="260.0" prefHeight="17.0" prefWidth="198.0" text=" " textFill="RED" />
+      <JFXPasswordField fx:id="habName" focusColor="#00c8ff" layoutX="89.0" layoutY="75.0" prefHeight="25.0" prefWidth="123.0" promptText=" Habit Title" style="-fx-background-color: rgba(0, 100, 200, .1);" unFocusColor="#38d0e7" />
+      <JFXRadioButton layoutX="73.0" layoutY="114.0" text="Daily" />
+      <JFXRadioButton layoutX="73.0" layoutY="142.0" text="Weekly" />
+      <JFXRadioButton layoutX="73.0" layoutY="168.0" text="Biweekly" />
+      <JFXRadioButton layoutX="73.0" layoutY="197.0" text="Monthly" />
+      <JFXButton fx:id="loginBtn" buttonType="RAISED" layoutX="105.0" layoutY="234.0" onAction="#onHabitClicked" ripplerFill="WHITE" style="-fx-background-color: rgba(0, 0, 256, .95);" text="Create Habit" textFill="WHITE">
+         <font>
+            <Font name="Trebuchet MS" size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>

@@ -18,6 +18,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import java.util.Random;
+
 public class LoginController {
 
     @FXML
@@ -50,6 +52,7 @@ public class LoginController {
                 if (userField.getText().equals(rs.getString("username"))) {
                     System.out.println("username found");
                     if (passField.getText().equals(rs.getString("password"))) {
+
                         System.out.println("Succesfully logged in");
                         Parent dash = FXMLLoader.load(getClass().getResource("/main/java/resources/scene/Dashboard.fxml"));
                         Stage primaryStage = new Stage();
