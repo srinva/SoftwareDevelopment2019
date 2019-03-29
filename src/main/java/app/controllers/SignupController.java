@@ -5,7 +5,11 @@ import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXPasswordField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 import main.java.app.Var;
 
 import java.net.URL;
@@ -22,6 +26,8 @@ import java.util.ResourceBundle;
  */
 public class SignupController implements Initializable {
 
+    @FXML
+    public AnchorPane lightBkg;
     @FXML
     public JFXButton signupBtn;
     @FXML
@@ -42,9 +48,8 @@ public class SignupController implements Initializable {
         } else {
             if (confField.getText().equals(passField.getText())) {
                 Connection conn = null;
-                String url = "jdbc:sqlite:C:\\Users\\Srinath\\com.srinath.coding\\SoftwareDevelopment2019\\SoftwareDev.db";
                 try {
-                    conn = DriverManager.getConnection(Var.PCURL);
+                    conn = DriverManager.getConnection(Var.LPURL);
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -52,8 +57,10 @@ public class SignupController implements Initializable {
 
                 Var.id = new Random().nextInt(10000);
 
-                statement.executeUpdate("insert into users (username, password) values('" + userField.getText().toString() + "', '" + passField.getText().toString() + "')");
+                statement.executeUpdate("insert into users (id, username, password) values('" + Var.id + "', '" + userField.getText().toString() + "', '" + passField.getText().toString() + "')");
 
+                Stage stage = (Stage) lightBkg.getScene().getWindow();
+                stage.close();
 
             } else {
                 indicator.setText("Make sure passwords match");
