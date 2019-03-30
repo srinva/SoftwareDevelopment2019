@@ -1,100 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="610.0" style="-fx-background-color: rgba(0, 100, 250, .25);" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.DashboardController">
+<AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FAF8F5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.LandingPageController">
    <children>
-      <MenuButton fx:id="windowBtn" layoutX="505.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: rgba(0,0,0,.25);" text="Window">
-        <items>
-          <MenuItem fx:id="dashOpt" mnemonicParsing="false" text="Dashboard" />
-          <MenuItem fx:id="StrksOpt" mnemonicParsing="false" text="HabitStreaks" />
-            <MenuItem fx:id="lead" mnemonicParsing="false" text="Leaderboards" />
-        </items>
-      </MenuButton>
-      <Label fx:id="label" layoutX="228.0" layoutY="-60.0" prefHeight="199.0" prefWidth="154.0" text="DASHBOARD">
-         <font>
-            <Font name="Tw Cen MT" size="29.0" />
-         </font>
-      </Label>
-      <JFXButton fx:id="signOut" layoutX="27.0" layoutY="15.0" style="-fx-background-color: rgb(200, 0, 0, .5);" text="Sign Out" textFill="WHITE">
-         <font>
-            <Font name="Trebuchet MS" size="12.0" />
-         </font>
-      </JFXButton>
-      <JFXButton fx:id="crtHabit1" layoutX="14.0" layoutY="142.0" minHeight="15.0" onAction="#habitOne" prefHeight="15.0" prefWidth="45.0" style="-fx-background-color: rgba(0,0,0,.3); -fx-min-height: 29; -fx-min-width: 100; -fx-border-radius: none;" text="Create Habit" />
-      <JFXButton fx:id="crtHabit2" layoutX="14.0" layoutY="175.0" minHeight="15.0" onAction="#habitTwo" prefHeight="15.0" prefWidth="45.0" style="-fx-background-color: rgba(0,0,0,.3); -fx-min-height: 29; -fx-min-width: 100;" text="Create Habit" />
-      <JFXButton fx:id="crtHabit3" layoutX="14.0" layoutY="208.0" minHeight="15.0" onAction="#habitThree" prefHeight="15.0" prefWidth="45.0" style="-fx-background-color: rgba(0,0,0,.3); -fx-min-height: 29; -fx-min-width: 100;" text="Create Habit" />
-      <JFXButton fx:id="crtHabit4" layoutX="14.0" layoutY="241.0" minHeight="15.0" onAction="#habitFour" prefHeight="15.0" prefWidth="45.0" style="-fx-background-color: rgba(0,0,0,.3); -fx-min-height: 29; -fx-min-width: 100;" text="Create Habit" />
-      <JFXButton fx:id="crtHabit5" layoutX="14.0" layoutY="274.0" minHeight="15.0" onAction="#habitFive" prefHeight="15.0" prefWidth="45.0" style="-fx-background-color: rgba(0,0,0,.3); -fx-min-height: 29; -fx-min-width: 100;" text="Create Habit" />
-      <JFXButton fx:id="crtHabit6" layoutX="14.0" layoutY="307.0" minHeight="15.0" onAction="#habitSix" prefHeight="15.0" prefWidth="45.0" style="-fx-background-color: rgba(0,0,0,.3); -fx-min-height: 29; -fx-min-width: 100;" text="Create Habit" />
-      <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="149.0" layoutY="133.0" prefHeight="212.0" prefWidth="422.0" vbarPolicy="NEVER">
-         <content>
-            <GridPane fx:id="habitGrid" gridLinesVisible="true" prefHeight="200.0" prefWidth="909.0" style="-fx-border-color: #38d0e7; -fx-opacity: .5;">
-              <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-         </content>
-      </ScrollPane>
-      <Button fx:id="leftBtn" layoutX="122.0" layoutY="222.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="18.0" style="-fx-background-color: #00c8ff;" text="&lt;" textFill="WHITE">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Button>
-      <Button fx:id="rightBtn" layoutX="576.0" layoutY="222.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="18.0" style="-fx-background-color: #00c8ff;" text="&gt;" textFill="WHITE">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Button>
+      <JFXButton fx:id="signupPort" buttonType="RAISED" layoutX="344.0" layoutY="271.0" onAction="#onSignup" prefHeight="25.0" prefWidth="60.0" ripplerFill="#646365d9" style="-fx-background-color: #39333A;" text="Signup" textFill="#faf8f5">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXButton fx:id="loginPort" buttonType="RAISED" layoutX="188.0" layoutY="271.0" onAction="#onLogin" prefHeight="25.0" prefWidth="60.0" ripplerFill="#a4c6c4d9" style="-fx-background-color: #67A09E;" text="Login" textFill="#39333a">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <ImageView fitHeight="132.0" fitWidth="282.0" layoutX="159.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../SoftwareDevelopment2019-habits/src/main/java/resources/img/logo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

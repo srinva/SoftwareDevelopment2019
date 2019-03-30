@@ -2,30 +2,24 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:controller="main.java.app.controllers.LandingPageController" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: rgb(153, 204, 255, .04);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FAF8F5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.LandingPageController">
    <children>
-      <Label fx:id="label" layoutX="236.0" layoutY="61.0" text="HABITUAL" textFill="#1dcceb">
-         <font>
-            <Font name="Trebuchet MS Bold" size="28.0" />
-         </font>
-      </Label>
-      <JFXButton buttonType="RAISED" layoutX="420.0" layoutY="307.0" onAction="#onSignup" fx:id="signupPort" prefHeight="25.0" prefWidth="60.0" ripplerFill="#0004ff" style="-fx-background-color: gray;" text="Signup" textFill="WHITE">
+      <JFXButton fx:id="signupPort" buttonType="RAISED" layoutX="344.0" layoutY="271.0" onAction="#onSignup" prefHeight="25.0" prefWidth="60.0" ripplerFill="#646365d9" style="-fx-background-color: #39333A;" text="Signup" textFill="#faf8f5">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="110.0" layoutY="307.0" onAction="#onLogin" fx:id="loginPort" prefHeight="25.0" prefWidth="60.0" ripplerFill="#1100ff" style="-fx-background-color: #42FF00;" text="Login" textFill="WHITE">
+      <JFXButton fx:id="loginPort" buttonType="RAISED" layoutX="188.0" layoutY="271.0" onAction="#onLogin" prefHeight="25.0" prefWidth="60.0" ripplerFill="#a4c6c4d9" style="-fx-background-color: #67A09E;" text="Login" textFill="#39333a">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXButton>
-      <JFXButton fx:id="exitBtn" layoutX="28.0" layoutY="27.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: rgba(200, 0, 0);" text="X" textFill="WHITE">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></JFXButton>
+      <ImageView fitHeight="132.0" fitWidth="282.0" layoutX="159.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/logo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

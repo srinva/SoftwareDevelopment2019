@@ -112,9 +112,16 @@ public class DashboardController {
                     e.printStackTrace();
                 }
 
-                /*statement.executeUpdate("insert into users (id, habitNumber, habitName, habitFreq, habitStreak) values('" + Var.id + "', " +
-                        "'" + Var.h1.getNumber() + "'," +
-                        " '" + Var.h1.get + "')");*/
+                try {
+                    statement.executeUpdate("insert into users (id, habitNumber, habitName, habitFreq, habitStreak) values" +
+                            "('" + Var.id + "', " +
+                            "'" + Var.h1.getNumber() + "'," +
+                            " '" + Var.h1.getTitle() + "', " +
+                            "'" + Var.h1.getFrequency() + "', " +
+                            "'" + Var.h1.getFrequency() + "')");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
 
             case 2:
                 Var.h2.setId(Var.id);
