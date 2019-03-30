@@ -56,6 +56,7 @@ public class LoginController {
                     System.out.println("username found");
                     if (passField.getText().equals(rs.getString("password"))) {
 
+                        Var.id = rs.getString("id");
                         Stage stage = (Stage) lightBkg.getScene().getWindow();
                         stage.close();
                         System.out.println("Succesfully logged in");

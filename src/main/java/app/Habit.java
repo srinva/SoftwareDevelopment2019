@@ -5,7 +5,7 @@ public class Habit {
     public int number;
     public String title;
     public String frequency;
-    public int id;
+    public String id;
     public int streak;
 
     public int getNumber() {
@@ -32,11 +32,11 @@ public class Habit {
         this.frequency = frequency;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

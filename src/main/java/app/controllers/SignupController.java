@@ -55,7 +55,8 @@ public class SignupController implements Initializable {
                 }
                 Statement statement = conn.createStatement();
 
-                Var.id = new Random().nextInt(10000);
+                int id = new Random().nextInt(10000);
+                Var.id = String.valueOf(id);
 
                 statement.executeUpdate("insert into users (id, username, password) values('" + Var.id + "', '" + userField.getText().toString() + "', '" + passField.getText().toString() + "')");
 
