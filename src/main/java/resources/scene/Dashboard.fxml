@@ -18,7 +18,7 @@
          </cursor></JFXButton>
       <ImageView fitHeight="132.0" fitWidth="282.0" layoutX="159.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/logo.png" />
+            <Image url="@../../../../../../../SoftwareDevelopment2019-habits/src/main/java/resources/img/logo.png" />
          </image>
       </ImageView>
    </children>
