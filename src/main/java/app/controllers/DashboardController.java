@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import main.java.app.Habit;
 import main.java.app.Var;
 
 import java.io.IOException;
@@ -45,8 +46,22 @@ public class DashboardController {
     @FXML
     public JFXRadioButton monthly;
 
-    int number;
-    String freq;
+    public int number;
+    public String freq;
+    public Var var = new Var();
+
+    public void insertValues(Habit h, Statement s) {
+        try {
+            s.executeUpdate("insert into users (id, habitNumber, habitName, habitFreq, habitStreak) values" +
+                    "('" + Var.id + "', " +
+                    "'" + h.getNumber() + "'," +
+                    " '" + h.getTitle() + "', " +
+                    "'" + h.getFrequency() + "', " +
+                    "'" + h.getStreak() + "')");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     @FXML
@@ -71,7 +86,7 @@ public class DashboardController {
 
     @FXML
     public void habitOne() {
-        number = 1;
+        var.h1.setNumber(1);
         System.out.println("yuh");
         Parent newh = null;
         try {
@@ -162,58 +177,58 @@ public class DashboardController {
 
         switch (number) {
             case 1:
-                Var.h1.setId(Var.id);
-                Var.h1.setNumber(1);
-                Var.h1.setTitle(habName.getText());
-                Var.h1.setFrequency(freq);
-                Var.h1.setStreak(0);
+                var.h1.setId(Var.id);
+                var.h1.setNumber(number);
+                var.h1.setTitle(habName.getText());
+                var.h1.setFrequency(freq);
+                var.h1.setStreak(0);
                 Stage stage = (Stage) biweekly.getScene().getWindow();
                 stage.close();
 
                 break;
 
             case 2:
-                Var.h2.setId(Var.id);
-                Var.h2.setNumber(2);
-                Var.h2.setTitle(habName.getText());
-                Var.h2.setFrequency(freq);
-                Var.h2.setStreak(0);
+                var.h2.setId(Var.id);
+                var.h2.setNumber(2);
+                var.h2.setTitle(habName.getText());
+                var.h2.setFrequency(freq);
+                var.h2.setStreak(0);
 
 
                 break;
             case 3:
-                Var.h3.setId(Var.id);
-                Var.h3.setNumber(3);
-                Var.h3.setTitle(habName.getText());
-                Var.h3.setFrequency(freq);
-                Var.h3.setStreak(0);
+                var.h3.setId(Var.id);
+                var.h3.setNumber(3);
+                var.h3.setTitle(habName.getText());
+                var.h3.setFrequency(freq);
+                var.h3.setStreak(0);
 
 
                 break;
             case 4:
-                Var.h4.setId(Var.id);
-                Var.h4.setNumber(4);
-                Var.h4.setTitle(habName.getText());
-                Var.h4.setFrequency(freq);
-                Var.h4.setStreak(0);
+                var.h4.setId(Var.id);
+                var.h4.setNumber(4);
+                var.h4.setTitle(habName.getText());
+                var.h4.setFrequency(freq);
+                var.h4.setStreak(0);
 
 
                 break;
             case 5:
-                Var.h5.setId(Var.id);
-                Var.h5.setNumber(5);
-                Var.h5.setTitle(habName.getText());
-                Var.h5.setFrequency(freq);
-                Var.h5.setStreak(0);
+                var.h5.setId(Var.id);
+                var.h5.setNumber(5);
+                var.h5.setTitle(habName.getText());
+                var.h5.setFrequency(freq);
+                var.h5.setStreak(0);
 
 
                 break;
             case 6:
-                Var.h6.setId(Var.id);
-                Var.h6.setNumber(6);
-                Var.h6.setTitle(habName.getText());
-                Var.h6.setFrequency(freq);
-                Var.h6.setStreak(0);
+                var.h6.setId(Var.id);
+                var.h6.setNumber(6);
+                var.h6.setTitle(habName.getText());
+                var.h6.setFrequency(freq);
+                var.h6.setStreak(0);
 
 
                 break;
@@ -233,77 +248,16 @@ public class DashboardController {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        try {
-            statement.executeUpdate("insert into users (id, habitNumber, habitName, habitFreq, habitStreak) values" +
-                    "('" + Var.id + "', " +
-                    "'" + Var.h1.getNumber() + "'," +
-                    " '" + Var.h1.getTitle() + "', " +
-                    "'" + Var.h1.getFrequency() + "', " +
-                    "'" + Var.h1.getFrequency() + "', " +
-                    "'" + Var.h1.getStreak() + "')");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
 
-        try {
-            statement.executeUpdate("insert into users (id, habitNumber, habitName, habitFreq, habitStreak) values" +
-                    "('" + Var.id + "', " +
-                    "'" + Var.h2.getNumber() + "'," +
-                    " '" + Var.h2.getTitle() + "', " +
-                    "'" + Var.h2.getFrequency() + "', " +
-                    "'" + Var.h2.getFrequency() + "', " +
-                    "'" + Var.h2.getStreak() + "')");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        insertValues(var.h1, statement);
+        insertValues(var.h1, statement);
+        insertValues(var.h1, statement);
+        insertValues(var.h1, statement);
+        insertValues(var.h1, statement);
+        insertValues(var.h1, statement);
 
-        try {
-            statement.executeUpdate("insert into users (id, habitNumber, habitName, habitFreq, habitStreak) values" +
-                    "('" + Var.id + "', " +
-                    "'" + Var.h3.getNumber() + "'," +
-                    " '" + Var.h3.getTitle() + "', " +
-                    "'" + Var.h3.getFrequency() + "', " +
-                    "'" + Var.h3.getFrequency() + "', " +
-                    "'" + Var.h3.getStreak() + "')");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
 
-        try {
-            statement.executeUpdate("insert into users (id, habitNumber, habitName, habitFreq, habitStreak) values" +
-                    "('" + Var.id + "', " +
-                    "'" + Var.h4.getNumber() + "'," +
-                    " '" + Var.h4.getTitle() + "', " +
-                    "'" + Var.h4.getFrequency() + "', " +
-                    "'" + Var.h4.getFrequency() + "', " +
-                    "'" + Var.h4.getStreak() + "')");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
 
-        try {
-            statement.executeUpdate("insert into users (id, habitNumber, habitName, habitFreq, habitStreak) values" +
-                    "('" + Var.id + "', " +
-                    "'" + Var.h5.getNumber() + "'," +
-                    " '" + Var.h5.getTitle() + "', " +
-                    "'" + Var.h5.getFrequency() + "', " +
-                    "'" + Var.h5.getFrequency() + "', " +
-                    "'" + Var.h5.getStreak() + "')");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            statement.executeUpdate("insert into users (id, habitNumber, habitName, habitFreq, habitStreak) values" +
-                    "('" + Var.id + "', " +
-                    "'" + Var.h6.getNumber() + "'," +
-                    " '" + Var.h6.getTitle() + "', " +
-                    "'" + Var.h6.getFrequency() + "', " +
-                    "'" + Var.h6.getFrequency() + "', " +
-                    "'" + Var.h6.getStreak() + "')");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 
 

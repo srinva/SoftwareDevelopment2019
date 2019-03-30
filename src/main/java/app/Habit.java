@@ -2,7 +2,7 @@ package main.java.app;
 
 public class Habit {
 
-    public int number;
+    public int number = 0;
     public String title;
     public String frequency;
     public String id;
