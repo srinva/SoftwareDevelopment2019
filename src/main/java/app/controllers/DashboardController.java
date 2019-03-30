@@ -52,7 +52,7 @@ public class DashboardController {
 
     public void insertValues(Habit h, Statement s) {
         try {
-            s.executeUpdate("insert into users (id, habitNumber, habitName, habitFreq, habitStreak) values" +
+            s.executeUpdate("insert into habits (id, habitNumber, habitName, habitFreq, habitStreak) values" +
                     "('" + Var.id + "', " +
                     "'" + h.getNumber() + "'," +
                     " '" + h.getTitle() + "', " +
@@ -86,7 +86,7 @@ public class DashboardController {
 
     @FXML
     public void habitOne() {
-        var.h1.setNumber(1);
+        number = 1;
         System.out.println("yuh");
         Parent newh = null;
         try {
@@ -174,16 +174,30 @@ public class DashboardController {
     @FXML
     public void onHabitClicked() {
 
+        System.out.println("yuh");
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(Var.LPURL);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        Statement statement = null;
+        try {
+            statement = conn.createStatement();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         switch (number) {
             case 1:
-                var.h1.setId(Var.id);
-                var.h1.setNumber(number);
-                var.h1.setTitle(habName.getText());
-                var.h1.setFrequency(freq);
-                var.h1.setStreak(0);
-                Stage stage = (Stage) biweekly.getScene().getWindow();
-                stage.close();
+                Var.h1.setId(Var.id);
+                Var.h1.setNumber(number);
+                Var.h1.setTitle(habName.getText());
+                Var.h1.setFrequency(freq);
+                Var.h1.setStreak(0);
+                insertValues(Var.h1, statement);
+
+
 
                 break;
 
@@ -193,7 +207,7 @@ public class DashboardController {
                 var.h2.setTitle(habName.getText());
                 var.h2.setFrequency(freq);
                 var.h2.setStreak(0);
-
+                
 
                 break;
             case 3:
@@ -235,26 +249,10 @@ public class DashboardController {
             default:
                 System.out.println("error");
         }
-        System.out.println("yuh");
-        Connection conn = null;
-        try {
-            conn = DriverManager.getConnection(Var.LPURL);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        Statement statement = null;
-        try {
-            statement = conn.createStatement();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        Stage stage = (Stage) biweekly.getScene().getWindow();
+        stage.close();
 
-        insertValues(var.h1, statement);
-        insertValues(var.h1, statement);
-        insertValues(var.h1, statement);
-        insertValues(var.h1, statement);
-        insertValues(var.h1, statement);
-        insertValues(var.h1, statement);
+
 
 
 

@@ -10,10 +10,10 @@ public class Var {
 
     public static String id;
 
-    public Habit h1;
-    public Habit h2;
-    public Habit h3;
-    public Habit h4;
-    public Habit h5;
-    public Habit h6;
+    public static Habit h1 = new Habit();
+    public static Habit h2 = new Habit();
+    public static Habit h3 = new Habit();
+    public static Habit h4 = new Habit();
+    public static Habit h5 = new Habit();
+    public static Habit h6 = new Habit();
 }
