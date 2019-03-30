@@ -58,7 +58,8 @@ public class SignupController implements Initializable {
                 int id = new Random().nextInt(10000);
                 Var.id = String.valueOf(id);
 
-                statement.executeUpdate("insert into users (id, username, password) values('" + Var.id + "', '" + userField.getText().toString() + "', '" + passField.getText().toString() + "')");
+                statement.executeUpdate("insert into users (id, username, password) values('" + Var.id
+                        + "', '" + userField.getText().toString() + "', '" + passField.getText().toString() + "')");
 
                 Stage stage = (Stage) lightBkg.getScene().getWindow();
                 stage.close();
