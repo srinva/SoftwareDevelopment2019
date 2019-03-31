@@ -12,10 +12,7 @@ import main.java.app.Habit;
 import main.java.app.Var;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Random;
 
 /**
@@ -46,18 +43,18 @@ public class DashboardController {
     @FXML
     public JFXRadioButton monthly;
 
-    public int number;
+    public int number = 1;
     public String freq;
     public Var var = new Var();
 
-    public void insertValues(Habit h, Statement s) {
+    public void insertValues(Statement s) {
         try {
             s.executeUpdate("insert into habits (id, habitNumber, habitName, habitFreq, habitStreak) values" +
                     "('" + Var.id + "', " +
-                    "'" + h.getNumber() + "'," +
-                    " '" + h.getTitle() + "', " +
-                    "'" + h.getFrequency() + "', " +
-                    "'" + h.getStreak() + "')");
+                    "'" + number + "'," +
+                    " '" + habName.getText() + "', " +
+                    "'" + freq + "', " +
+                    "'" + 0 + "')");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -101,78 +98,8 @@ public class DashboardController {
     }
 
     @FXML
-    public void habitTwo() {
-        number = 2;
-        Parent newh = null;
-        try {
-            newh = FXMLLoader.load(getClass().getResource("/main/java/resources/scene/NewHabit.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Stage primaryStage = new Stage();
-        Scene scene = new Scene(newh, 300, 300);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-    @FXML
-    public void habitThree() {
-        number = 3;
-        Parent newh = null;
-        try {
-            newh = FXMLLoader.load(getClass().getResource("/main/java/resources/scene/NewHabit.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Stage primaryStage = new Stage();
-        Scene scene = new Scene(newh, 300, 300);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-    @FXML
-    public void habitFour() {
-        number = 4;
-        Parent newh = null;
-        try {
-            newh = FXMLLoader.load(getClass().getResource("/main/java/resources/scene/NewHabit.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Stage primaryStage = new Stage();
-        Scene scene = new Scene(newh, 300, 300);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-    @FXML
-    public void habitFive() {
-        number = 5;
-        Parent newh = null;
-        try {
-            newh = FXMLLoader.load(getClass().getResource("/main/java/resources/scene/NewHabit.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Stage primaryStage = new Stage();
-        Scene scene = new Scene(newh, 300, 300);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-    @FXML
-    public void habitSix() {
-        number = 6;
-        Parent newh = null;
-        try {
-            newh = FXMLLoader.load(getClass().getResource("/main/java/resources/scene/NewHabit.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Stage primaryStage = new Stage();
-        Scene scene = new Scene(newh, 300, 300);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
+    public void onHabitClicked() throws SQLException, IOException {
 
-    @FXML
-    public void onHabitClicked() {
 
         System.out.println("yuh");
         Connection conn = null;
@@ -187,68 +114,42 @@ public class DashboardController {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        //insertValues(statement);
+        int count = 0;
+        ResultSet rs = statement.executeQuery("select * from habits");
+        while(rs.next())
+        {
 
-        switch (number) {
-            case 1:
-                Var.h1.setId(Var.id);
-                Var.h1.setNumber(number);
-                Var.h1.setTitle(habName.getText());
-                Var.h1.setFrequency(freq);
-                Var.h1.setStreak(0);
-                insertValues(Var.h1, statement);
-
-
-
-                break;
-
-            case 2:
-                var.h2.setId(Var.id);
-                var.h2.setNumber(2);
-                var.h2.setTitle(habName.getText());
-                var.h2.setFrequency(freq);
-                var.h2.setStreak(0);
-                
-
-                break;
-            case 3:
-                var.h3.setId(Var.id);
-                var.h3.setNumber(3);
-                var.h3.setTitle(habName.getText());
-                var.h3.setFrequency(freq);
-                var.h3.setStreak(0);
+            // read the result set
+            if (Var.id.equals(rs.getString("id"))) {
+                //System.out.println("Habit Name: " + rs.getString("habitName"));
+                count++;
+            }
 
 
-                break;
-            case 4:
-                var.h4.setId(Var.id);
-                var.h4.setNumber(4);
-                var.h4.setTitle(habName.getText());
-                var.h4.setFrequency(freq);
-                var.h4.setStreak(0);
-
-
-                break;
-            case 5:
-                var.h5.setId(Var.id);
-                var.h5.setNumber(5);
-                var.h5.setTitle(habName.getText());
-                var.h5.setFrequency(freq);
-                var.h5.setStreak(0);
-
-
-                break;
-            case 6:
-                var.h6.setId(Var.id);
-                var.h6.setNumber(6);
-                var.h6.setTitle(habName.getText());
-                var.h6.setFrequency(freq);
-                var.h6.setStreak(0);
-
-
-                break;
-            default:
-                System.out.println("error");
         }
+
+        if (count >= 6) {
+            System.out.println("You cannot create any more habits currently");
+
+        } else {
+            insertValues(statement);
+            ResultSet s = statement.executeQuery("select * from habits");
+            while(s.next())
+            {
+
+                // read the result set
+                if (Var.id.equals(s.getString("id"))) {
+                    System.out.println("Habit Name: " + s.getString("habitName"));
+
+                }
+
+
+            }
+        }
+
+
+
         Stage stage = (Stage) biweekly.getScene().getWindow();
         stage.close();
 
