@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="lightBkg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FAF8F5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.SignupController">
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+   <children>
+      <JFXButton fx:id="signupBtn" buttonType="RAISED" layoutX="269.0" layoutY="313.0" onAction="#onSignup" ripplerFill="WHITE" style="-fx-background-color: #646365;" text="Sign Up" textFill="WHITE">
+         <font>
+            <Font name="Trebuchet MS" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXDialog layoutX="210.0" layoutY="138.0" prefHeight="0.0" prefWidth="155.0" />
+      <JFXPasswordField fx:id="confField" focusColor="#795a4c" labelFloat="true" layoutX="239.0" layoutY="213.0" prefHeight="23.0" prefWidth="123.0" promptText=" Confirm Password" style="-fx-background-color: rgba(0, 100, 200, .1);" unFocusColor="#694635">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </JFXPasswordField>
+      <JFXPasswordField fx:id="passField" focusColor="#795a4c" labelFloat="true" layoutX="239.0" layoutY="163.0" promptText=" Password" style="-fx-background-color: rgba(0, 100, 200, .10);" unFocusColor="#694635">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <font>
+            <Font name="Trebuchet MS" size="12.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXTextField fx:id="userField" focusColor="#795a4c" labelFloat="true" layoutX="239.0" layoutY="115.0" promptText=" Username" style="-fx-background-color: rgba(0, 100, 200, .10);" unFocusColor="#694635">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <font>
+            <Font name="Trebuchet MS" size="12.0" />
+         </font>
+      </JFXTextField>
+      <Label fx:id="indicator" alignment="BOTTOM_CENTER" layoutX="212.0" layoutY="266.0" prefHeight="17.0" prefWidth="198.0" text=" " textFill="RED" />
+      <ImageView fitHeight="107.0" fitWidth="276.0" layoutX="185.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/signup.png" />
+         </image>
+      </ImageView>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>
