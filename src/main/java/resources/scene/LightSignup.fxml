@@ -23,17 +23,17 @@
          </font>
       </JFXButton>
       <JFXDialog layoutX="210.0" layoutY="138.0" prefHeight="0.0" prefWidth="155.0" />
-      <JFXPasswordField fx:id="confField" focusColor="#795a4c" labelFloat="true" layoutX="239.0" layoutY="213.0" prefHeight="23.0" prefWidth="123.0" promptText=" Confirm Password" style="-fx-background-color: rgba(0, 100, 200, .1);" unFocusColor="#694635">
+      <JFXPasswordField fx:id="confField" focusColor="#795a4c" labelFloat="true" layoutX="239.0" layoutY="234.0" prefHeight="23.0" prefWidth="123.0" promptText=" Confirm Password" style="-fx-background-color: rgba(0, 100, 200, .1);" unFocusColor="#694635">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
       </JFXPasswordField>
-      <JFXPasswordField fx:id="passField" focusColor="#795a4c" labelFloat="true" layoutX="239.0" layoutY="163.0" prefHeight="31.0" prefWidth="123.0" promptText=" Password" style="-fx-background-color: rgba(0, 100, 200, .10);" unFocusColor="#694635">
+      <JFXPasswordField fx:id="passField" focusColor="#795a4c" labelFloat="true" layoutX="239.0" layoutY="185.0" prefHeight="31.0" prefWidth="123.0" promptText=" Password" style="-fx-background-color: rgba(0, 100, 200, .10);" unFocusColor="#694635">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
       </JFXPasswordField>
-      <JFXTextField fx:id="userField" focusColor="#795a4c" labelFloat="true" layoutX="239.0" layoutY="115.0" prefHeight="31.0" prefWidth="123.0" promptText=" Username" style="-fx-background-color: rgba(0, 100, 200, .10);" unFocusColor="#694635">
+      <JFXTextField fx:id="userField" focusColor="#795a4c" labelFloat="true" layoutX="239.0" layoutY="138.0" prefHeight="31.0" prefWidth="123.0" promptText=" Username" style="-fx-background-color: rgba(0, 100, 200, .10);" unFocusColor="#694635">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
