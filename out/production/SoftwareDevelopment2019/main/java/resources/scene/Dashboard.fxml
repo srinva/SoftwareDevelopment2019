@@ -8,27 +8,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="610.0" style="-fx-background-color: rgba(0, 100, 250, .25);" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.DashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="610.0" style="-fx-background-color: #FAF8F5;" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.DashboardController">
    <children>
-      <MenuButton fx:id="windowBtn" layoutX="505.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: rgba(0,0,0,.25);" text="Window">
+      <MenuButton fx:id="windowBtn" layoutX="430.0" layoutY="11.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="96.0" style="-fx-background-color: rgba(0,0,0,.25);" text="Window">
         <items>
           <MenuItem fx:id="dashOpt" mnemonicParsing="false" text="Dashboard" />
           <MenuItem fx:id="StrksOpt" mnemonicParsing="false" text="HabitStreaks" />
             <MenuItem fx:id="lead" mnemonicParsing="false" text="Leaderboards" />
         </items>
       </MenuButton>
-      <Label fx:id="label" layoutX="228.0" layoutY="-60.0" prefHeight="199.0" prefWidth="154.0" text="DASHBOARD">
+      <Label fx:id="label" layoutX="224.0" layoutY="10.0" prefHeight="53.0" prefWidth="185.0" text="DASHBOARD">
          <font>
             <Font name="Tw Cen MT" size="29.0" />
          </font>
       </Label>
-      <JFXButton fx:id="signOut" layoutX="27.0" layoutY="15.0" onAction="#onOut" style="-fx-background-color: rgb(200, 0, 0, .5);" text="Sign Out" textFill="WHITE">
+      <JFXButton fx:id="signOut" layoutX="14.0" layoutY="10.0" onAction="#onOut" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: #646365;" text="Sign Out" textFill="WHITE">
          <font>
             <Font name="Trebuchet MS" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="crtHabit1" layoutX="14.0" layoutY="142.0" minHeight="15.0" onAction="#habitOne" prefHeight="15.0" prefWidth="45.0" style="-fx-background-color: rgba(0,0,0,.3); -fx-min-height: 29; -fx-min-width: 100; -fx-border-radius: none;" text="Create Habit" />
-      <JFXListView fx:id="listView" layoutX="405.0" layoutY="81.0" prefHeight="324.0" prefWidth="200.0" />
-      <JFXButton fx:id="refresh" layoutX="525.0" layoutY="49.0" mnemonicParsing="false" onAction="#onRefresh" text="Refresh" />
+      <JFXButton fx:id="crtHabit1" layoutX="95.0" layoutY="10.0" minHeight="15.0" onAction="#habitOne" prefHeight="40.0" prefWidth="109.0" style="-fx-background-color: #67A09E; -fx-min-height: 29; -fx-min-width: 100; -fx-border-radius: none;" text="Create Habit" />
+      <JFXListView fx:id="listView" layoutX="299.0" layoutY="66.0" prefHeight="336.0" prefWidth="306.0" style="-fx-background-color: #BDAF98;" stylesheets="@../css/listview.css" />
+      <JFXButton fx:id="refresh" layoutX="535.0" layoutY="15.0" mnemonicParsing="false" onAction="#onRefresh" prefHeight="31.0" prefWidth="70.0" text="Refresh" />
    </children>
 </AnchorPane>

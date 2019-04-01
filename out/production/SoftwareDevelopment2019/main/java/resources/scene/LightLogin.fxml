@@ -23,14 +23,11 @@
          </font>
       </JFXButton>
       <JFXDialog layoutX="210.0" layoutY="138.0" prefHeight="0.0" prefWidth="155.0" />
-      <Label fx:id="indicator" alignment="BOTTOM_CENTER" layoutX="213.0" layoutY="260.0" prefHeight="17.0" prefWidth="198.0" text=" " textFill="RED" />
-      <JFXTextField fx:id="userField" focusColor="#795a4c" labelFloat="true" layoutX="238.0" layoutY="153.0" promptText=" Username" style="-fx-background-color: rgba(0, 100, 200, .10);" unFocusColor="#694635">
+      <Label fx:id="indicator" alignment="BOTTOM_CENTER" layoutX="201.0" layoutY="319.0" prefHeight="17.0" prefWidth="198.0" text=" " textFill="RED" />
+      <JFXTextField fx:id="userField" focusColor="#795a4c" labelFloat="true" layoutX="238.0" layoutY="145.0" prefHeight="31.0" prefWidth="123.0" promptText=" Username" style="-fx-background-color: rgba(0, 100, 200, .10);" unFocusColor="#694635">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
-         <font>
-            <Font name="Trebuchet MS" size="12.0" />
-         </font>
       </JFXTextField>
       <JFXPasswordField fx:id="passField" focusColor="#795a4c" layoutX="238.0" layoutY="200.0" prefHeight="25.0" prefWidth="123.0" promptText=" Password" style="-fx-background-color: rgba(0, 100, 200, .1);" unFocusColor="#694635" />
       <ImageView fitHeight="93.0" fitWidth="204.0" layoutX="214.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">

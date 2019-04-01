@@ -53,44 +53,7 @@ public class DashboardController implements Initializable {
     TimerTask timerTask = new TimerTask() {
         @Override
         public void run() {
-            listView.getItems().clear();
-            Connection con = null;
-            try {
-                con = DriverManager.getConnection(Var.LPURL);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            Statement stat = null;
-            try {
-                stat = con.createStatement();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            //insertValues(statement);
-            ResultSet s = null;
-            try {
-                s = stat.executeQuery("select * from habits");
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            ;
-            try {
-                while(s.next())
-                {
-
-                    // read the result set
-                    if (Var.id.equals(s.getString("id"))) {
-                        //System.out.println("Habit Name: " + rs.getString("habitName"));
-
-                        listView.getItems().add(new JFXCheckBox("Habit Name: " + s.getString(("habitName"))));
-                        listView.getItems().add(new Label("Frequency: "+s.getString("habitFreq")));
-                    }
-
-
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            onRefresh();
         }
     };
     Timer t = new Timer();
@@ -190,8 +153,7 @@ public class DashboardController implements Initializable {
             insertValues(statement);
 
         }
-
-
+        
 
         Stage stage = (Stage) biweekly.getScene().getWindow();
         stage.close();
@@ -265,5 +227,6 @@ public class DashboardController implements Initializable {
         cal.setTime(today);
         System.out.println(cal.get(Calendar.DAY_OF_YEAR));
 
+        t.scheduleAtFixedRate(timerTask, 10, 1000*60);
     }
 }

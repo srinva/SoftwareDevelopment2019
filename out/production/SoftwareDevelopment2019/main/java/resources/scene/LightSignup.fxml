@@ -23,28 +23,22 @@
          </font>
       </JFXButton>
       <JFXDialog layoutX="210.0" layoutY="138.0" prefHeight="0.0" prefWidth="155.0" />
-      <JFXPasswordField fx:id="confField" focusColor="#795a4c" labelFloat="true" layoutX="239.0" layoutY="213.0" prefHeight="23.0" prefWidth="123.0" promptText=" Confirm Password" style="-fx-background-color: rgba(0, 100, 200, .1);" unFocusColor="#694635">
+      <JFXPasswordField fx:id="confField" focusColor="#795a4c" labelFloat="true" layoutX="239.0" layoutY="234.0" prefHeight="23.0" prefWidth="123.0" promptText=" Confirm Password" style="-fx-background-color: rgba(0, 100, 200, .1);" unFocusColor="#694635">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
       </JFXPasswordField>
-      <JFXPasswordField fx:id="passField" focusColor="#795a4c" labelFloat="true" layoutX="239.0" layoutY="163.0" promptText=" Password" style="-fx-background-color: rgba(0, 100, 200, .10);" unFocusColor="#694635">
+      <JFXPasswordField fx:id="passField" focusColor="#795a4c" labelFloat="true" layoutX="239.0" layoutY="185.0" prefHeight="31.0" prefWidth="123.0" promptText=" Password" style="-fx-background-color: rgba(0, 100, 200, .10);" unFocusColor="#694635">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
-         <font>
-            <Font name="Trebuchet MS" size="12.0" />
-         </font>
       </JFXPasswordField>
-      <JFXTextField fx:id="userField" focusColor="#795a4c" labelFloat="true" layoutX="239.0" layoutY="115.0" promptText=" Username" style="-fx-background-color: rgba(0, 100, 200, .10);" unFocusColor="#694635">
+      <JFXTextField fx:id="userField" focusColor="#795a4c" labelFloat="true" layoutX="239.0" layoutY="138.0" prefHeight="31.0" prefWidth="123.0" promptText=" Username" style="-fx-background-color: rgba(0, 100, 200, .10);" unFocusColor="#694635">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
-         <font>
-            <Font name="Trebuchet MS" size="12.0" />
-         </font>
       </JFXTextField>
-      <Label fx:id="indicator" alignment="BOTTOM_CENTER" layoutX="212.0" layoutY="266.0" prefHeight="17.0" prefWidth="198.0" text=" " textFill="RED" />
+      <Label fx:id="indicator" alignment="BOTTOM_CENTER" layoutX="201.0" layoutY="265.0" prefHeight="17.0" prefWidth="198.0" text=" " textFill="RED" />
       <ImageView fitHeight="107.0" fitWidth="276.0" layoutX="185.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/signup.png" />

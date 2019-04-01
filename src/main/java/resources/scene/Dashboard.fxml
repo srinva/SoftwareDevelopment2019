@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="610.0" style="-fx-background-color: #FAF8F5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.DashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="610.0" style="-fx-background-color: #FAF8F5;" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.DashboardController">
    <children>
       <MenuButton fx:id="windowBtn" layoutX="430.0" layoutY="11.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="96.0" style="-fx-background-color: rgba(0,0,0,.25);" text="Window">
         <items>
@@ -28,7 +28,7 @@
          </font>
       </JFXButton>
       <JFXButton fx:id="crtHabit1" layoutX="95.0" layoutY="10.0" minHeight="15.0" onAction="#habitOne" prefHeight="40.0" prefWidth="109.0" style="-fx-background-color: #67A09E; -fx-min-height: 29; -fx-min-width: 100; -fx-border-radius: none;" text="Create Habit" />
-      <JFXListView fx:id="listView" layoutX="299.0" layoutY="66.0" prefHeight="336.0" prefWidth="306.0" stylesheets="@../css/listview.css" />
+      <JFXListView fx:id="listView" layoutX="299.0" layoutY="66.0" prefHeight="336.0" prefWidth="306.0" style="-fx-background-color: #BDAF98;" stylesheets="@../css/listview.css" />
       <JFXButton fx:id="refresh" layoutX="535.0" layoutY="15.0" mnemonicParsing="false" onAction="#onRefresh" prefHeight="31.0" prefWidth="70.0" text="Refresh" />
    </children>
 </AnchorPane>
