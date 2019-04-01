@@ -16,10 +16,12 @@ import javafx.stage.Stage;
 import main.java.app.Habit;
 import main.java.app.Var;
 
+import java.beans.EventHandler;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.*;
+import java.util.Date;
 
 /**
  * Created by Srinath on 3/22/2019.
@@ -43,6 +45,8 @@ public class DashboardController implements Initializable {
     @FXML
     public JFXButton signOut;
 
+    Date today;
+    Calendar cal = Calendar.getInstance();
     public int number = 1;
     public String freq;
     public Var var = new Var();
@@ -95,7 +99,7 @@ public class DashboardController implements Initializable {
         try {
             s.executeUpdate("insert into habits (id, habitNumber, habitName, habitFreq, habitStreak) values" +
                     "('" + Var.id + "', " +
-                    "'" + number + "'," +
+                    "'" + cal.get(Calendar.DAY_OF_YEAR) + "'," +
                     " '" + habName.getText() + "', " +
                     "'" + freq + "', " +
                     "'" + 0 + "')");
@@ -215,8 +219,10 @@ public class DashboardController implements Initializable {
         }
         //insertValues(statement);
         ResultSet s = null;
+        ResultSet rs = null;
         try {
             s = stat.executeQuery("select * from habits");
+            rs = stat.executeQuery("select * from habits");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -229,8 +235,20 @@ public class DashboardController implements Initializable {
                 if (Var.id.equals(s.getString("id"))) {
                     //System.out.println("Habit Name: " + rs.getString("habitName"));
 
-                    listView.getItems().add(new JFXCheckBox("Habit Name: " + s.getString(("habitName"))));
-                    listView.getItems().add(new Label("Frequency: "+s.getString("habitFreq")));
+
+                    JFXCheckBox cb = new JFXCheckBox("Habit Name: " + s.getString("habitName"));
+                    Label lbl = new Label("Frequency: "+s.getString("habitFreq"));
+                    if (s.getString("habitFreq").equals("Daily")) {
+                        if (cal.get(Calendar.DAY_OF_YEAR)-Integer.parseInt(s.getString("habitNumber")) == 1) {
+                            System.out.println("Streak value for "+s.getString("habitName")+" is "+s.getString("habitStreak"));
+                            int streak = Integer.parseInt(s.getString("habitStreak"))+1;
+                            stat.executeUpdate("update habits set habitStreak = '"+streak+"' where id = '"+Var.id+"' and habitName = '"+s.getString("habitName") + "'");
+
+                        }
+                    }
+
+                    listView.getItems().add(cb);
+                    listView.getItems().add(lbl);
                 }
 
 
@@ -243,6 +261,9 @@ public class DashboardController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        today = new Date();
+        cal.setTime(today);
+        System.out.println(cal.get(Calendar.DAY_OF_YEAR));
 
     }
 }
