@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/SearchController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/scene/Search.fxml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareDevelopment2019/main/java/app/controllers/DashboardController$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareDevelopment2019/main/java/app/controllers/DashboardController.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SoftwareDev.db" afterPath="$PROJECT_DIR$/SoftwareDev.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareDevelopment2019/main/java/app/controllers/SearchController.class" afterPath="$PROJECT_DIR$/out/production/SoftwareDevelopment2019/main/java/app/controllers/SearchController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/app/Var.java" afterPath="$PROJECT_DIR$/src/main/java/app/Var.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/app/controllers/DashboardController.java" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/DashboardController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/scene/Dashboard.fxml" afterPath="$PROJECT_DIR$/src/main/java/resources/scene/Dashboard.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareDevelopment2019/main/java/resources/scene/Search.fxml" afterPath="$PROJECT_DIR$/out/production/SoftwareDevelopment2019/main/java/resources/scene/Search.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/app/controllers/SearchController.java" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/SearchController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/scene/Search.fxml" afterPath="$PROJECT_DIR$/src/main/java/resources/scene/Search.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,9 +79,10 @@
       <file leaf-file-name="DashboardController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/app/controllers/DashboardController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2276">
-              <caret line="19" column="44" lean-forward="true" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+            <state relative-caret-position="252">
+              <caret line="114" column="18" lean-forward="false" selection-start-line="114" selection-start-column="17" selection-end-line="114" selection-end-column="18" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#1568#1698#0" expanded="true" />
                 <element signature="e#1697#1698#0" expanded="true" />
                 <element signature="e#2363#2364#0" expanded="true" />
@@ -105,9 +103,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
               <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,8 +111,8 @@
       <file leaf-file-name="SignupController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/app/controllers/SignupController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="61" column="116" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="61" selection-end-column="116" />
+            <state relative-caret-position="25">
+              <caret line="51" column="52" lean-forward="false" selection-start-line="51" selection-start-column="52" selection-end-line="51" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -152,10 +148,10 @@
       <file leaf-file-name="Search.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/resources/scene/Search.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+            <state relative-caret-position="533">
+              <caret line="24" column="116" lean-forward="false" selection-start-line="24" selection-start-column="116" selection-end-line="24" selection-end-column="116" />
               <folding>
-                <marker date="1554220444121" expanded="true" signature="1504:1523" ph="..." />
+                <marker date="1554230447121" expanded="true" signature="1367:1383" ph="..." />
               </folding>
             </state>
           </provider>
@@ -180,8 +176,8 @@
       <file leaf-file-name="SearchController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/app/controllers/SearchController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="63" column="82" lean-forward="false" selection-start-line="63" selection-start-column="82" selection-end-line="63" selection-end-column="82" />
+            <state relative-caret-position="605">
+              <caret line="96" column="76" lean-forward="false" selection-start-line="96" selection-start-column="76" selection-end-line="96" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -249,10 +245,10 @@
         <option value="$PROJECT_DIR$/src/main/java/resources/scene/LightSignup.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/resources/scene/Calculator.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/app/controllers/CalculatorController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/scene/Search.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/resources/scene/Dashboard.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/app/controllers/DashboardController.java" />
         <option value="$PROJECT_DIR$/src/main/java/app/Var.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/scene/Search.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/app/controllers/SearchController.java" />
       </list>
     </option>
@@ -598,7 +594,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277053" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32762557" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1011,10 +1007,26 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/controllers/SignupController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/controllers/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="61" column="116" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="61" selection-end-column="116" />
+        <state relative-caret-position="130">
+          <caret line="54" column="75" lean-forward="true" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/controllers/CalculatorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/Var.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1032,12 +1044,20 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/controllers/SignupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="51" column="52" lean-forward="false" selection-start-line="51" selection-start-column="52" selection-end-line="51" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/resources/scene/Search.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        <state relative-caret-position="533">
+          <caret line="24" column="116" lean-forward="false" selection-start-line="24" selection-start-column="116" selection-end-line="24" selection-end-column="116" />
           <folding>
-            <marker date="1554220444121" expanded="true" signature="1504:1523" ph="..." />
+            <marker date="1554230447121" expanded="true" signature="1367:1383" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1045,19 +1065,12 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/controllers/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="54" column="75" lean-forward="true" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/app/controllers/DashboardController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2276">
-          <caret line="19" column="44" lean-forward="true" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+        <state relative-caret-position="252">
+          <caret line="114" column="18" lean-forward="false" selection-start-line="114" selection-start-column="17" selection-end-line="114" selection-end-column="18" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#1568#1698#0" expanded="true" />
             <element signature="e#1697#1698#0" expanded="true" />
             <element signature="e#2363#2364#0" expanded="true" />
@@ -1072,28 +1085,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/controllers/CalculatorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/Var.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/app/controllers/SearchController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="63" column="82" lean-forward="false" selection-start-line="63" selection-start-column="82" selection-end-line="63" selection-end-column="82" />
+        <state relative-caret-position="605">
+          <caret line="96" column="76" lean-forward="false" selection-start-line="96" selection-start-column="76" selection-end-line="96" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -16,14 +16,13 @@
     </cursor>
     <children>
         <JFXDialog layoutX="210.0" layoutY="138.0" prefHeight="0.0" prefWidth="155.0" />
-        <Label fx:id="indicator" alignment="BOTTOM_CENTER" layoutX="51.0" layoutY="265.0" prefHeight="17.0" prefWidth="198.0" text=" " textFill="RED" />
         <JFXTextField fx:id="userField" focusColor="#795a4c" layoutX="89.0" layoutY="80.0" prefHeight="25.0" prefWidth="123.0" promptText=" Minutes" style="-fx-background-color: rgba(0, 100, 200, .1);" unFocusColor="#694635" />
         <JFXButton fx:id="search" buttonType="RAISED" layoutX="118.0" layoutY="120.0" onAction="#onSearch" ripplerFill="WHITE" style="-fx-background-color: #67A09E;" text="Confirm" textFill="WHITE">
             <font>
                 <Font name="Trebuchet MS" size="13.0" />
             </font>
         </JFXButton>
-        <Label layoutX="89.0" layoutY="46.0" prefHeight="17.0" prefWidth="123.0" text="Your id is: " />
+        <Label layoutX="89.0" layoutY="46.0" prefHeight="17.0" prefWidth="123.0" text="Your id is: " fx:id="idLbl"/>
     </children>
     <opaqueInsets>
         <Insets />

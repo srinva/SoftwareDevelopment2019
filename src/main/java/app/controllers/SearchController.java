@@ -27,7 +27,7 @@ import java.util.ResourceBundle;
 public class SearchController implements Initializable {
 
     @FXML
-    public Label indicator;
+    public Label idLbl;
     @FXML
     public JFXButton search;
     @FXML
@@ -77,7 +77,8 @@ public class SearchController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        indicator.setText("Your id is: "+ Var.id);
+        idLbl.setText("Your id is: "+Var.id);
+        System.out.print(""+Var.id);
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(Var.LPURL);
@@ -91,10 +92,9 @@ public class SearchController implements Initializable {
             e.printStackTrace();
         }
 
-        int id = new Random().nextInt(10000);
-        Var.id = String.valueOf(id);
 
         try {
+            statement.executeUpdate("delete from points where id = '"+Var.id+"'");
             statement.executeUpdate("insert into points (id, points) values('" + Var.id
                     + "', '" + Var.points + "')");
         } catch (SQLException e) {
