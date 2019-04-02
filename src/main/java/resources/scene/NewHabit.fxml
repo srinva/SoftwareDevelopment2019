@@ -7,6 +7,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -16,11 +18,6 @@
    </cursor>
    <children>
       <JFXDialog layoutX="210.0" layoutY="138.0" prefHeight="0.0" prefWidth="155.0" />
-      <Label fx:id="label" layoutX="39.0" layoutY="14.0" text="CREATE NEW HABIT" textAlignment="CENTER">
-         <font>
-            <Font name="Tw Cen MT" size="25.0" />
-         </font>
-      </Label>
       <Label fx:id="indicator" alignment="BOTTOM_CENTER" layoutX="51.0" layoutY="265.0" prefHeight="17.0" prefWidth="198.0" text=" " textFill="RED" />
       <JFXTextField fx:id="habName" focusColor="#795a4c" layoutX="89.0" layoutY="64.0" prefHeight="25.0" prefWidth="123.0" promptText=" Habit Title" style="-fx-background-color: rgba(0, 100, 200, .1);" unFocusColor="#694635" />
       <JFXRadioButton fx:id="daily" layoutX="73.0" layoutY="114.0" onAction="#onDaily" style="-jfx-selected-color: #795a4c; -jfx-unselected-color: #694635;" text="Daily" />
@@ -32,6 +29,11 @@
             <Font name="Trebuchet MS" size="13.0" />
          </font>
       </JFXButton>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="52.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/habitcreate.png" />
+         </image>
+      </ImageView>
    </children>
    <opaqueInsets>
       <Insets />
