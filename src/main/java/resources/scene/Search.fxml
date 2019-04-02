@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="160.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.SearchController">
+<AnchorPane prefHeight="160.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.SearchController">
 
     <cursor>
         <Cursor fx:constant="DEFAULT" />
@@ -17,13 +17,13 @@
     <children>
         <JFXDialog layoutX="210.0" layoutY="138.0" prefHeight="0.0" prefWidth="155.0" />
         <Label fx:id="indicator" alignment="BOTTOM_CENTER" layoutX="51.0" layoutY="265.0" prefHeight="17.0" prefWidth="198.0" text=" " textFill="RED" />
-        <JFXTextField fx:id="userField" focusColor="#795a4c" layoutX="89.0" layoutY="80.0" prefHeight="25.0" prefWidth="123.0" promptText=" Minutes" style="-fx-background-color: rgba(0, 100, 200, .1);" unFocusColor="#694635" />
-        <JFXButton fx:id="search" buttonType="RAISED" layoutX="118.0" layoutY="120.0" onAction="#onSearch" ripplerFill="WHITE" style="-fx-background-color: #67A09E;" text="Confirm" textFill="WHITE">
+        <JFXTextField fx:id="userField" focusColor="#795a4c" layoutX="129.0" layoutY="132.0" prefHeight="25.0" prefWidth="123.0" promptText=" Minutes" style="-fx-background-color: rgba(0, 100, 200, .1);" unFocusColor="#694635" />
+        <JFXButton fx:id="search" buttonType="RAISED" layoutX="153.0" layoutY="190.0" onAction="#onSearch" ripplerFill="WHITE" style="-fx-background-color: #67A09E;" text="Confirm" textFill="WHITE">
             <font>
                 <Font name="Trebuchet MS" size="13.0" />
             </font>
         </JFXButton>
-        <Label layoutX="89.0" layoutY="46.0" prefHeight="17.0" prefWidth="123.0" text="Your id is: " />
+        <Label layoutX="125.0" layoutY="58.0" prefHeight="17.0" prefWidth="123.0" text="Your id is: " />
     </children>
     <opaqueInsets>
         <Insets />
