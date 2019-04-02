@@ -51,6 +51,8 @@ public class DashboardController implements Initializable {
     public JFXButton signOut;
     @FXML
     public Label points;
+    @FXML
+    public JFXButton search;
 
     Date today;
     Calendar cal = Calendar.getInstance();
@@ -118,6 +120,20 @@ public class DashboardController implements Initializable {
         }
         Stage primaryStage = new Stage();
         Scene scene = new Scene(newh, 300, 300);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    @FXML
+    public void onSearch() {
+        Parent newh = null;
+        try {
+            newh = FXMLLoader.load(getClass().getResource("/main/java/resources/scene/Search.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Stage primaryStage = new Stage();
+        Scene scene = new Scene(newh, 300, 160);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
