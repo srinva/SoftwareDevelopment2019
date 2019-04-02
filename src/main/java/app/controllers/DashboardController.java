@@ -3,6 +3,7 @@ package main.java.app.controllers;
 import com.jfoenix.controls.*;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,6 +17,8 @@ import javafx.stage.Stage;
 import main.java.app.Habit;
 import main.java.app.Var;
 
+import javax.xml.transform.Result;
+import java.awt.event.ActionEvent;
 import java.beans.EventHandler;
 import java.io.IOException;
 import java.net.URL;
@@ -53,7 +56,7 @@ public class DashboardController implements Initializable {
     TimerTask timerTask = new TimerTask() {
         @Override
         public void run() {
-            onRefresh();
+
         }
     };
     Timer t = new Timer();
@@ -148,10 +151,9 @@ public class DashboardController implements Initializable {
 
         if (count >= 6) {
             System.out.println("You cannot create any more habits currently");
-
+            onRefresh();
         } else {
             insertValues(statement);
-
         }
         
 
@@ -174,17 +176,21 @@ public class DashboardController implements Initializable {
             e.printStackTrace();
         }
         Statement stat = null;
+        Statement state = null;
         try {
             stat = con.createStatement();
+            state = con.createStatement();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         //insertValues(statement);
         ResultSet s = null;
         ResultSet rs = null;
+        ResultSet ss = null;
         try {
             s = stat.executeQuery("select * from habits");
             rs = stat.executeQuery("select * from habits");
+            ss = state.executeQuery("select * from habits");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -200,21 +206,31 @@ public class DashboardController implements Initializable {
 
                     JFXCheckBox cb = new JFXCheckBox("Habit Name: " + s.getString("habitName"));
                     Label lbl = new Label("Frequency: "+s.getString("habitFreq"));
-                    if (s.getString("habitFreq").equals("Daily")) {
-                        if (cal.get(Calendar.DAY_OF_YEAR)-Integer.parseInt(s.getString("habitNumber")) == 1) {
-                            System.out.println("Streak value for "+s.getString("habitName")+" is "+s.getString("habitStreak"));
-                            int streak = Integer.parseInt(s.getString("habitStreak"))+1;
-                            stat.executeUpdate("update habits set habitStreak = '"+streak+"' where id = '"+Var.id+"' and habitName = '"+s.getString("habitName") + "'");
-
+                    cb.selectedProperty().addListener(new ChangeListener<Boolean>() {
+                        @Override
+                        public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                            if (cb.isSelected()) {
+                                Var.points += 1;
+                                System.out.println("Points: "+Var.points);
+                                cb.setSelected(false);
+                            }
                         }
-                    }
+                    });
+
+
 
                     listView.getItems().add(cb);
                     listView.getItems().add(lbl);
+
                 }
 
 
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            con.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -226,7 +242,6 @@ public class DashboardController implements Initializable {
         today = new Date();
         cal.setTime(today);
         System.out.println(cal.get(Calendar.DAY_OF_YEAR));
-
-        t.scheduleAtFixedRate(timerTask, 10, 1000*60);
+        t.scheduleAtFixedRate(timerTask, 10, 1000*2);
     }
 }
