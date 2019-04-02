@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="lightBkg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="160.0" prefWidth="300.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.CalculatorController">
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+   <children>
+      <JFXDialog layoutX="210.0" layoutY="138.0" prefHeight="0.0" prefWidth="155.0" />
+      <Label fx:id="indicator" alignment="BOTTOM_CENTER" layoutX="51.0" layoutY="265.0" prefHeight="17.0" prefWidth="198.0" text=" " textFill="RED" />
+      <JFXTextField fx:id="minField" focusColor="#795a4c" layoutX="89.0" layoutY="80.0" prefHeight="25.0" prefWidth="123.0" promptText=" Minutes" style="-fx-background-color: rgba(0, 100, 200, .1);" unFocusColor="#694635" />
+      <JFXButton fx:id="confirm" buttonType="RAISED" layoutX="118.0" layoutY="120.0" onAction="#onConfirm" ripplerFill="WHITE" style="-fx-background-color: #67A09E;" text="Confirm" textFill="WHITE">
+         <font>
+            <Font name="Trebuchet MS" size="13.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="23.0" layoutY="49.0" prefHeight="17.0" prefWidth="265.0" text="How many minutes will you spend on the habit?" />
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>

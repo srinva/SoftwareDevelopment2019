@@ -14,8 +14,10 @@ import javafx.scene.control.ListView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import main.java.app.Habit;
 import main.java.app.Var;
+import org.controlsfx.control.Notifications;
 
 import javax.xml.transform.Result;
 import java.awt.event.ActionEvent;
@@ -47,19 +49,22 @@ public class DashboardController implements Initializable {
     private JFXListView listView;
     @FXML
     public JFXButton signOut;
+    @FXML
+    public Label points;
 
     Date today;
     Calendar cal = Calendar.getInstance();
     public int number = 1;
     public String freq;
     public Var var = new Var();
+    Timer t = new Timer();
     TimerTask timerTask = new TimerTask() {
         @Override
         public void run() {
-
+            points.setText("Points: "+Var.points);
         }
     };
-    Timer t = new Timer();
+
 
     public void insertValues(Statement s) {
         try {
@@ -103,7 +108,7 @@ public class DashboardController implements Initializable {
 
     @FXML
     public void habitOne() {
-        number = 1;
+        //number = 1;
         System.out.println("yuh");
         Parent newh = null;
         try {
@@ -151,7 +156,7 @@ public class DashboardController implements Initializable {
 
         if (count >= 6) {
             System.out.println("You cannot create any more habits currently");
-            onRefresh();
+
         } else {
             insertValues(statement);
         }
@@ -164,6 +169,20 @@ public class DashboardController implements Initializable {
 
 
 
+    }
+
+    @FXML
+    public void onCalc() {
+        Parent newh = null;
+        try {
+            newh = FXMLLoader.load(getClass().getResource("/main/java/resources/scene/Calculator.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Stage primaryStage = new Stage();
+        Scene scene = new Scene(newh, 300, 160);
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     @FXML
@@ -211,7 +230,7 @@ public class DashboardController implements Initializable {
                         public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                             if (cb.isSelected()) {
                                 Var.points += 1;
-                                System.out.println("Points: "+Var.points);
+                                points.setText("Points: "+Var.points);
                                 cb.setSelected(false);
                             }
                         }
@@ -221,6 +240,7 @@ public class DashboardController implements Initializable {
 
                     listView.getItems().add(cb);
                     listView.getItems().add(lbl);
+                    points.setText("Points: "+Var.points);
 
                 }
 
@@ -239,9 +259,6 @@ public class DashboardController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        today = new Date();
-        cal.setTime(today);
-        System.out.println(cal.get(Calendar.DAY_OF_YEAR));
-        t.scheduleAtFixedRate(timerTask, 10, 1000*2);
+
     }
 }

@@ -12,4 +12,13 @@ public class Var {
 
     public static String id;
 
+    public static double min = 0;
+
+
+    public static double calculateDays(double min) {
+        double power = Math.exp(-min);
+        double constant = 1 + power;
+        return constant*66;
+    }
+
 }
