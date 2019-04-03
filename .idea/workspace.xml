@@ -5,10 +5,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SoftwareDev.db" afterPath="$PROJECT_DIR$/SoftwareDev.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareDevelopment2019/main/java/resources/scene/Calculator.fxml" afterPath="$PROJECT_DIR$/out/production/SoftwareDevelopment2019/main/java/resources/scene/Calculator.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareDevelopment2019/main/java/resources/scene/Dashboard.fxml" afterPath="$PROJECT_DIR$/out/production/SoftwareDevelopment2019/main/java/resources/scene/Dashboard.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareDevelopment2019/main/java/resources/scene/NewHabit.fxml" afterPath="$PROJECT_DIR$/out/production/SoftwareDevelopment2019/main/java/resources/scene/NewHabit.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareDevelopment2019/main/java/resources/scene/Search.fxml" afterPath="$PROJECT_DIR$/out/production/SoftwareDevelopment2019/main/java/resources/scene/Search.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/scene/Calculator.fxml" afterPath="$PROJECT_DIR$/src/main/java/resources/scene/Calculator.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/scene/Dashboard.fxml" afterPath="$PROJECT_DIR$/src/main/java/resources/scene/Dashboard.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/scene/NewHabit.fxml" afterPath="$PROJECT_DIR$/src/main/java/resources/scene/NewHabit.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/scene/Search.fxml" afterPath="$PROJECT_DIR$/src/main/java/resources/scene/Search.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -68,7 +68,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Var.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Var.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/app/Var.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
@@ -105,8 +105,31 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
               <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewHabit.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/resources/scene/NewHabit.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+              <folding>
+                <marker date="1554240339001" expanded="true" signature="845:897" ph="..." />
+                <marker date="1554240339001" expanded="true" signature="911:2626" ph="..." />
+                <marker date="1554240339001" expanded="true" signature="2291:2396" ph="..." />
+                <marker date="1554240339001" expanded="true" signature="2307:2377" ph="..." />
+                <marker date="1554240339001" expanded="true" signature="2505:2611" ph="..." />
+                <marker date="1554240339001" expanded="true" signature="2522:2592" ph="..." />
+                <marker date="1554240339001" expanded="true" signature="2644:2680" ph="..." />
+              </folding>
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
@@ -116,18 +139,6 @@
             <state relative-caret-position="25">
               <caret line="51" column="52" lean-forward="false" selection-start-line="51" selection-start-column="52" selection-end-line="51" selection-end-column="52" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBConnect.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/app/DBConnect.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -147,17 +158,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Search.fxml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Search.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/resources/scene/Search.fxml">
-          <provider selected="true" editor-type-id="text-editor">
+          <provider editor-type-id="text-editor">
             <state relative-caret-position="450">
               <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
-                <marker date="1554231112939" expanded="true" signature="1372:1387" ph="..." />
+                <marker date="1554250235297" expanded="true" signature="1372:1387" ph="..." />
               </folding>
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
             <state />
           </provider>
         </entry>
@@ -167,7 +178,15 @@
           <provider editor-type-id="text-editor">
             <state relative-caret-position="183">
               <caret line="12" column="3" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="31" selection-end-column="18" />
-              <folding />
+              <folding>
+                <marker date="1554251675195" expanded="true" signature="723:775" ph="..." />
+                <marker date="1554251675195" expanded="true" signature="789:1777" ph="..." />
+                <marker date="1554251675195" expanded="true" signature="1450:1555" ph="..." />
+                <marker date="1554251675195" expanded="true" signature="1466:1536" ph="..." />
+                <marker date="1554251675195" expanded="true" signature="1688:1762" ph="..." />
+                <marker date="1554251675195" expanded="true" signature="1704:1754" ph="..." />
+                <marker date="1554251675195" expanded="true" signature="1795:1831" ph="..." />
+              </folding>
             </state>
           </provider>
           <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
@@ -236,7 +255,6 @@
         <option value="$PROJECT_DIR$/src/main/java/app/controllers/LandingPageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/scene/LightLogin.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/app/controllers/NewHabitController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/scene/NewHabit.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/app/controllers/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/scene/LandingPage.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/app/controllers/SignupController.java" />
@@ -245,13 +263,14 @@
         <option value="$PROJECT_DIR$/src/main/java/app/controllers/Methods.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/css/listview.css" />
         <option value="$PROJECT_DIR$/src/main/java/resources/scene/LightSignup.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/scene/Calculator.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/app/controllers/CalculatorController.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/scene/Dashboard.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/app/controllers/DashboardController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app/Var.java" />
         <option value="$PROJECT_DIR$/src/main/java/app/controllers/SearchController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/scene/NewHabit.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/resources/scene/Search.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/scene/Calculator.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/app/Var.java" />
       </list>
     </option>
   </component>
@@ -976,17 +995,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/scene/NewHabit.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/resources/scene/LandingPage.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1002,22 +1010,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="54" column="75" lean-forward="true" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/controllers/CalculatorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/Var.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1060,11 +1052,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/scene/Calculator.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/scene/NewHabit.fxml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="12" column="3" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="31" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="250">
+          <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+          <folding>
+            <marker date="1554240339001" expanded="true" signature="845:897" ph="..." />
+            <marker date="1554240339001" expanded="true" signature="911:2626" ph="..." />
+            <marker date="1554240339001" expanded="true" signature="2291:2396" ph="..." />
+            <marker date="1554240339001" expanded="true" signature="2307:2377" ph="..." />
+            <marker date="1554240339001" expanded="true" signature="2505:2611" ph="..." />
+            <marker date="1554240339001" expanded="true" signature="2522:2592" ph="..." />
+            <marker date="1554240339001" expanded="true" signature="2644:2680" ph="..." />
+          </folding>
         </state>
       </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
@@ -1085,16 +1085,53 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/resources/scene/Search.fxml">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <marker date="1554231112939" expanded="true" signature="1372:1387" ph="..." />
+            <marker date="1554250235297" expanded="true" signature="1372:1387" ph="..." />
           </folding>
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/scene/Calculator.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="12" column="3" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="31" selection-end-column="18" />
+          <folding>
+            <marker date="1554251675195" expanded="true" signature="723:775" ph="..." />
+            <marker date="1554251675195" expanded="true" signature="789:1777" ph="..." />
+            <marker date="1554251675195" expanded="true" signature="1450:1555" ph="..." />
+            <marker date="1554251675195" expanded="true" signature="1466:1536" ph="..." />
+            <marker date="1554251675195" expanded="true" signature="1688:1762" ph="..." />
+            <marker date="1554251675195" expanded="true" signature="1704:1754" ph="..." />
+            <marker date="1554251675195" expanded="true" signature="1795:1831" ph="..." />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/controllers/CalculatorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/Var.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
