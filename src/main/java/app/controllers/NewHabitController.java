@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 
 public class NewHabitController {
 
+
     @FXML
     public void onHabitClicked() {
 

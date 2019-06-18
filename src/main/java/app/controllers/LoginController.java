@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import main.java.app.Var;
 
 import java.io.IOException;
@@ -64,6 +65,7 @@ public class LoginController {
                         Stage primaryStage = new Stage();
                         Scene scene = new Scene(dash, 610, 409);
                         primaryStage.setScene(scene);
+                        primaryStage.initStyle(StageStyle.UNDECORATED);
                         primaryStage.show();
 
                         break;
@@ -92,5 +94,7 @@ public class LoginController {
 
 
     }
+
+    
 
 }

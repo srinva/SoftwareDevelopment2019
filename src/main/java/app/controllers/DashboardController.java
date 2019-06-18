@@ -4,6 +4,8 @@ import com.jfoenix.controls.*;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,14 +16,13 @@ import javafx.scene.control.ListView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import main.java.app.Habit;
 import main.java.app.Var;
 import org.controlsfx.control.Notifications;
 
 import javax.xml.transform.Result;
-import java.awt.event.ActionEvent;
-import java.beans.EventHandler;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -239,16 +240,15 @@ public class DashboardController implements Initializable {
                     //System.out.println("Habit Name: " + rs.getString("habitName"));
 
 
-                    JFXCheckBox cb = new JFXCheckBox("Habit Name: " + s.getString("habitName"));
-                    Label lbl = new Label("Frequency: "+s.getString("habitFreq"));
-                    cb.selectedProperty().addListener(new ChangeListener<Boolean>() {
+                    JFXButton cb = new JFXButton("Habit Name: " + s.getString("habitName"));
+                    cb.setStyle("-fx-background-color: #646365; ");
+                    cb.setTextFill(Color.WHITE);
+                    Label lbl = new Label("  Frequency: "+s.getString("habitFreq"));
+                    cb.setOnAction(new EventHandler<ActionEvent>() {
                         @Override
-                        public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                            if (cb.isSelected()) {
-                                Var.points += 1;
-                                points.setText("Points: "+Var.points);
-                                cb.setSelected(false);
-                            }
+                        public void handle(ActionEvent event) {
+                            Var.points += 1;
+                            points.setText("Points: "+Var.points);
                         }
                     });
 
