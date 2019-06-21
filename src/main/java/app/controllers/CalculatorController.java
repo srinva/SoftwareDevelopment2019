@@ -1,6 +1,8 @@
 package main.java.app.controllers;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -11,6 +13,14 @@ public class CalculatorController {
 
     @FXML
     public JFXTextField minField;
+    @FXML
+    public JFXButton close;
+
+    @FXML
+    public void onClose() {
+        Stage stage = (Stage) close.getScene().getWindow();
+        stage.close();
+    }
 
     @FXML
     public void onConfirm() {

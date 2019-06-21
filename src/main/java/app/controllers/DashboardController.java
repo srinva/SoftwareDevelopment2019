@@ -1,6 +1,9 @@
 package main.java.app.controllers;
 
 import com.jfoenix.controls.*;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
@@ -36,16 +39,8 @@ public class DashboardController implements Initializable {
 
     @FXML
     public JFXButton crtHabit1;
-    @FXML
-    public JFXTextField habName;
-    @FXML
-    public JFXRadioButton daily;
-    @FXML
-    public JFXRadioButton weekly;
-    @FXML
-    public JFXRadioButton biweekly;
-    @FXML
-    public JFXRadioButton monthly;
+
+
     @FXML
     private JFXListView listView;
     @FXML
@@ -54,60 +49,37 @@ public class DashboardController implements Initializable {
     public Label points;
     @FXML
     public JFXButton search;
+    @FXML
+    public JFXListView leaderboard;
 
-    Date today;
-    Calendar cal = Calendar.getInstance();
-    public int number = 1;
-    public String freq;
-    public Var var = new Var();
-    Timer t = new Timer();
-    TimerTask timerTask = new TimerTask() {
-        @Override
-        public void run() {
-            points.setText("Points: "+Var.points);
+
+
+
+    Timeline tl = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
+        leaderboard.getItems().clear();
+        leaderboard.getItems().add(new Label("Leaderboard"));
+        for(int i = 0; i<Var.friends.size(); i++) {
+            Label lbl = new Label(""+Var.friends.get(i));
+            leaderboard.getItems().add(lbl);
+
         }
-    };
+        points.setText("Points: "+Var.points);
+        onRefresh();
+    }));
 
 
-    public void insertValues(Statement s) {
-        try {
-            s.executeUpdate("insert into habits (id, habitNumber, habitName, habitFreq, habitStreak) values" +
-                    "('" + Var.id + "', " +
-                    "'" + cal.get(Calendar.DAY_OF_YEAR) + "'," +
-                    " '" + habName.getText() + "', " +
-                    "'" + freq + "', " +
-                    "'" + 0 + "')");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+
+
 
     @FXML
     public void onOut() {
+        tl.stop();
         Stage stage = (Stage) signOut.getScene().getWindow();
         stage.close();
     }
 
 
-    @FXML
-    public void onDaily() {
-        freq = "Daily";
-    }
 
-    @FXML
-    public void onWeekly() {
-        freq = "Weekly";
-    }
-
-    @FXML
-    public void onBi() {
-        freq = "Biweekly";
-    }
-
-    @FXML
-    public void onMonthly() {
-        freq = "Monthly";
-    }
 
     @FXML
     public void habitOne() {
@@ -139,54 +111,6 @@ public class DashboardController implements Initializable {
         primaryStage.show();
     }
 
-    @FXML
-    public void onHabitClicked() throws SQLException, IOException {
-
-
-        System.out.println("yuh");
-        Connection conn = null;
-        try {
-            conn = DriverManager.getConnection(Var.LPURL);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        Statement statement = null;
-        try {
-            statement = conn.createStatement();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        //insertValues(statement);
-        int count = 0;
-        ResultSet rs = statement.executeQuery("select * from habits");
-        while(rs.next())
-        {
-
-            // read the result set
-            if (Var.id.equals(rs.getString("id"))) {
-                //System.out.println("Habit Name: " + rs.getString("habitName"));
-                count++;
-            }
-
-
-        }
-
-        if (count >= 6) {
-            System.out.println("You cannot create any more habits currently");
-
-        } else {
-            insertValues(statement);
-        }
-        
-
-        Stage stage = (Stage) biweekly.getScene().getWindow();
-        stage.close();
-
-
-
-
-
-    }
 
     @FXML
     public void onCalc() {
@@ -205,28 +129,25 @@ public class DashboardController implements Initializable {
     @FXML
     public void onRefresh() {
         listView.getItems().clear();
+
         Connection con = null;
         try {
-            con = DriverManager.getConnection(Var.LPURL);
+            con = DriverManager.getConnection(Var.URL, Var.DBU, Var.DBP);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         Statement stat = null;
-        Statement state = null;
+        Statement stat2 = null;
         try {
             stat = con.createStatement();
-            state = con.createStatement();
+            stat2 = con.createStatement();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         //insertValues(statement);
         ResultSet s = null;
-        ResultSet rs = null;
-        ResultSet ss = null;
         try {
             s = stat.executeQuery("select * from habits");
-            rs = stat.executeQuery("select * from habits");
-            ss = state.executeQuery("select * from habits");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -237,13 +158,10 @@ public class DashboardController implements Initializable {
 
                 // read the result set
                 if (Var.id.equals(s.getString("id"))) {
-                    //System.out.println("Habit Name: " + rs.getString("habitName"));
-
-
-                    JFXButton cb = new JFXButton("Habit Name: " + s.getString("habitName"));
+                    JFXButton cb = new JFXButton("Habit Name: " + s.getString("name"));
                     cb.setStyle("-fx-background-color: #646365; ");
                     cb.setTextFill(Color.WHITE);
-                    Label lbl = new Label("  Frequency: "+s.getString("habitFreq"));
+                    Label lbl = new Label(" Frequency: "+s.getString("freq"));
                     cb.setOnAction(new EventHandler<ActionEvent>() {
                         @Override
                         public void handle(ActionEvent event) {
@@ -257,6 +175,7 @@ public class DashboardController implements Initializable {
                     listView.getItems().add(cb);
                     listView.getItems().add(lbl);
                     points.setText("Points: "+Var.points);
+                    stat2.executeUpdate("update users set points = "+Var.points+" where id = "+Var.id);
 
                 }
 
@@ -270,11 +189,19 @@ public class DashboardController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        try {
+            s.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        leaderboard.getItems().clear();
+        leaderboard.getItems().add(new Label("Leaderboard"));
+        tl.setCycleCount(Animation.INDEFINITE);
+        tl.play();
     }
 }

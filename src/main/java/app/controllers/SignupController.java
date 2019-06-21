@@ -38,7 +38,14 @@ public class SignupController implements Initializable {
     public JFXTextField userField;
     @FXML
     public Label indicator;
+    @FXML
+    public JFXButton close;
 
+    @FXML
+    public void onClose() {
+        Stage stage = (Stage) close.getScene().getWindow();
+        stage.close();
+    }
 
 
     @FXML
@@ -49,7 +56,7 @@ public class SignupController implements Initializable {
             if (confField.getText().equals(passField.getText())) {
                 Connection conn = null;
                 try {
-                    conn = DriverManager.getConnection(Var.LPURL);
+                    conn = DriverManager.getConnection(Var.URL, Var.DBU, Var.DBP);
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -58,8 +65,8 @@ public class SignupController implements Initializable {
                 int id = new Random().nextInt(10000);
                 Var.id = String.valueOf(id);
 
-                statement.executeUpdate("insert into users (id, username, password) values('" + Var.id
-                        + "', '" + userField.getText().toString() + "', '" + passField.getText().toString() + "')");
+                statement.executeUpdate("insert into users (id, username, password, points) values('" + Var.id
+                        + "', '" + userField.getText().toString() + "', '" + passField.getText().toString() + "', 0)");
 
                 Stage stage = (Stage) lightBkg.getScene().getWindow();
                 stage.close();

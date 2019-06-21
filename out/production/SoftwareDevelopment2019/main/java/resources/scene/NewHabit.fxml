@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="lightBkg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: #FAF8F5;" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.DashboardController">
+<AnchorPane fx:id="lightBkg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: #FAF8F5;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.NewHabitController">
    <cursor>
       <Cursor fx:constant="DEFAULT" />
    </cursor>
@@ -34,6 +34,7 @@
             <Image url="@../img/habitcreate.png" />
          </image>
       </ImageView>
+      <JFXButton fx:id="close" buttonType="RAISED" layoutX="2.0" layoutY="2.0" onAction="#onClose" style="-fx-background-color: #39333A;" text="X" textFill="WHITE" />
    </children>
    <opaqueInsets>
       <Insets />

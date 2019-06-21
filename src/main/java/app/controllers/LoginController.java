@@ -19,6 +19,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.*;
 
 import java.util.Random;
 
@@ -36,18 +37,23 @@ public class LoginController {
     public Label label;
     @FXML
     public Label indicator;
+    @FXML
+    public JFXButton close;
+
+    @FXML
+    public void onClose() {
+        Stage stage = (Stage) close.getScene().getWindow();
+        stage.close();
+    }
 
     @FXML
     public void onLoginClicked() throws SQLException {
         Connection conn = null;
         try {
-            // db parameters
-            String url = "jdbc:sqlite:C:\\Users\\Srinath\\com.srinath.coding\\SoftwareDevelopment2019\\SoftwareDev.db";
-            // create a connection to the database
-            conn = DriverManager.getConnection(Var.LPURL);
+
+            conn = DriverManager.getConnection(Var.URL, Var.DBU, Var.DBP);
             Statement statement = conn.createStatement();
 
-            //System.out.println("Connection to SQLite has been established.");
 
             ResultSet rs = statement.executeQuery("select * from users");
             while(rs.next())
@@ -58,6 +64,9 @@ public class LoginController {
                     if (passField.getText().equals(rs.getString("password"))) {
 
                         Var.id = rs.getString("id");
+                        Var.password = rs.getString("password");
+                        Var.username = rs.getString("username");
+                        Var.points = rs.getInt("points");
                         Stage stage = (Stage) lightBkg.getScene().getWindow();
                         stage.close();
                         System.out.println("Succesfully logged in");

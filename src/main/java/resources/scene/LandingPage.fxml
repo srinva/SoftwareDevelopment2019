@@ -6,7 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FAF8F5;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.LandingPageController">
+<AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FAF8F5;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.LandingPageController">
    <children>
       <JFXButton fx:id="signupPort" buttonType="RAISED" layoutX="344.0" layoutY="400.0" onAction="#onSignup" prefHeight="31.0" prefWidth="74.0" ripplerFill="#646365d9" style="-fx-background-color: #39333A;" text="Signup" textFill="#faf8f5">
          <cursor>
@@ -21,5 +21,6 @@
             <Image url="@../img/logo.png" />
          </image>
       </ImageView>
+      <JFXButton fx:id="close" buttonType="RAISED" layoutX="2.0" layoutY="2.0" onAction="#onClose" style="-fx-background-color: #39333A;" text="X" textFill="WHITE" />
    </children>
 </AnchorPane>

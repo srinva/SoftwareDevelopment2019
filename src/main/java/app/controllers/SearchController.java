@@ -32,12 +32,20 @@ public class SearchController implements Initializable {
     public JFXButton search;
     @FXML
     public JFXTextField userField;
+    @FXML
+    public JFXButton close;
+
+    @FXML
+    public void onClose() {
+        Stage stage = (Stage) close.getScene().getWindow();
+        stage.close();
+    }
 
     @FXML
     public void onSearch() {
         Connection conn = null;
         try {
-            conn = DriverManager.getConnection(Var.LPURL);
+            conn = DriverManager.getConnection(Var.URL, Var.DBU, Var.DBP);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -52,7 +60,7 @@ public class SearchController implements Initializable {
 
         ResultSet rs = null;
         try {
-            rs = statement.executeQuery("select * from points");
+            rs = statement.executeQuery("select * from users");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -65,6 +73,7 @@ public class SearchController implements Initializable {
                             .hideAfter(Duration.seconds(5))
                             .text("Keep going!")
                             .showConfirm();
+                    Var.friends.add(""+rs.getString("username")+": "+rs.getInt("points")+" points");
                 }
 
             }
@@ -82,7 +91,7 @@ public class SearchController implements Initializable {
         System.out.print(""+Var.id);
         Connection conn = null;
         try {
-            conn = DriverManager.getConnection(Var.LPURL);
+            conn = DriverManager.getConnection(Var.URL, Var.DBU, Var.DBP);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -95,9 +104,7 @@ public class SearchController implements Initializable {
 
 
         try {
-            statement.executeUpdate("delete from points where id = '"+Var.id+"'");
-            statement.executeUpdate("insert into points (id, points) values('" + Var.id
-                    + "', '" + Var.points + "')");
+            statement.executeUpdate("update users set points = "+Var.points+" where id = "+Var.id);
         } catch (SQLException e) {
             e.printStackTrace();
         }

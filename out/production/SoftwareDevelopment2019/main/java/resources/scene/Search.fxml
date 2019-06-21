@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="160.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.SearchController">
+<AnchorPane prefHeight="160.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.SearchController">
 
     <cursor>
         <Cursor fx:constant="DEFAULT" />
@@ -26,6 +26,7 @@
         </JFXButton>
 
         <Label fx:id="idLbl" layoutX="98.0" layoutY="60.0" prefHeight="17.0" prefWidth="123.0" text="Your id is: " />
+      <JFXButton fx:id="close" buttonType="RAISED" layoutX="2.0" layoutY="2.0" onAction="#onClose" style="-fx-background-color: #39333A;" text="X" textFill="WHITE" />
     </children>
     <opaqueInsets>
         <Insets />

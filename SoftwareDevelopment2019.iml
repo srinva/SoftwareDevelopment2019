@@ -10,5 +10,14 @@
     <orderEntry type="library" exported="" name="jfoenix-8.0.8" level="project" />
     <orderEntry type="library" exported="" name="sqlite-jdbc-3.23.1" level="project" />
     <orderEntry type="library" exported="" name="controlsfx-8.40.13" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/dependencies/mysql-connector-java-5.1.44-bin.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

@@ -3,6 +3,8 @@ package main.java.app.controllers;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
+import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -28,6 +30,14 @@ public class LandingPageController implements Initializable {
     public JFXButton loginPort;
     @FXML
     public ImageView label;
+    @FXML
+    public JFXButton close;
+
+    @FXML
+    public void onClose() {
+        Platform.exit();
+        System.exit(0);
+    }
 
     @FXML
     public void onLogin() throws IOException {
