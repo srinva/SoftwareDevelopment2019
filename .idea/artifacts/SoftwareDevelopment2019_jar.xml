@@ -1,11 +1,12 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="SoftwareDevelopment2019:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/SoftwareDevelopment2019_jar</output-path>
+    <output-path>$PROJECT_DIR$/../SoftwareDevelopment2019/out/artifacts/SoftwareDevelopment2019_jar</output-path>
     <root id="archive" name="SoftwareDevelopment2019.jar">
       <element id="module-output" name="SoftwareDevelopment2019" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/dependencies/controlsfx-8.40.13.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/dependencies/sqlite-jdbc-3.23.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/dependencies/jfoenix-8.0.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../SoftwareDevelopment2019/dependencies/controlsfx-8.40.13.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../SoftwareDevelopment2019/dependencies/mysql-connector-java-5.1.44-bin.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../SoftwareDevelopment2019/dependencies/jfoenix-8.0.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../SoftwareDevelopment2019/dependencies/sqlite-jdbc-3.23.1.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

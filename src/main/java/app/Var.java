@@ -10,7 +10,7 @@ public class Var {
 
     public static int points = 0;
 
-    public static final String URL = "jdbc:mysql://65.190.131.62:3306/habitual";
+    public static final String URL = "jdbc:mysql://65.190.131.62:3306/habitual?useSSL=false";
     public static final String DBU = "appuserauth";
     public static final String DBP = "tsadev2019";
     //public static final String LPURL = "jdbc:sqlite:S:\\SoftwareDevelopment2019\\SoftwareDev.db";
