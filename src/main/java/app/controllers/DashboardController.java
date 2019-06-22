@@ -52,8 +52,9 @@ public class DashboardController implements Initializable {
     @FXML
     public JFXListView leaderboard;
 
+    int lastdate;
 
-
+    Calendar cal = Calendar.getInstance();
 
     Timeline tl = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
         leaderboard.getItems().clear();
@@ -138,9 +139,11 @@ public class DashboardController implements Initializable {
         }
         Statement stat = null;
         Statement stat2 = null;
+        Statement stat3 = null;
         try {
             stat = con.createStatement();
             stat2 = con.createStatement();
+            stat3 = con.createStatement();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -158,17 +161,90 @@ public class DashboardController implements Initializable {
 
                 // read the result set
                 if (Var.id.equals(s.getString("id"))) {
-                    JFXButton cb = new JFXButton("Habit Name: " + s.getString("name"));
+                    JFXButton cb = new JFXButton("" + s.getString("name"));
                     cb.setStyle("-fx-background-color: #646365; ");
                     cb.setTextFill(Color.WHITE);
+                    String freq = s.getString("freq");
+                    String name = s.getString("name");
+                    int streak = Integer.parseInt(s.getString("streak"));
+                    lastdate = Integer.parseInt(s.getString("lastdate"));
                     Label lbl = new Label(" Frequency: "+s.getString("freq"));
                     cb.setOnAction(new EventHandler<ActionEvent>() {
                         @Override
                         public void handle(ActionEvent event) {
-                            Var.points += 1;
-                            points.setText("Points: "+Var.points);
+
+                            if (freq.equals("Daily")) {
+                                if (cal.get(Calendar.DAY_OF_YEAR) - lastdate >=1) {
+                                    cb.setDisable(true);
+                                    lastdate = cal.get(Calendar.DAY_OF_YEAR);
+                                    Var.points += 1;
+                                    points.setText("Points: "+Var.points);
+                                    System.out.println("disabled");
+                                } else {
+                                    cb.setDisable(false);
+                                    System.out.println("enabled");
+                                }
+                            } else if (freq.equals("Weekly")) {
+                                if (cal.get(Calendar.DAY_OF_YEAR) - lastdate >=7) {
+                                    cb.setDisable(true);
+                                    lastdate = cal.get(Calendar.DAY_OF_YEAR);
+                                    Var.points += 1;
+                                    points.setText("Points: "+Var.points);
+                                    System.out.println("disabled");
+                                } else {
+                                    cb.setDisable(false);
+                                    System.out.println("enabled");
+                                }
+                            } else if (freq.equals("Biweekly")) {
+                                if (cal.get(Calendar.DAY_OF_YEAR) - lastdate >=14) {
+                                    cb.setDisable(true);
+                                    lastdate = cal.get(Calendar.DAY_OF_YEAR);
+                                    Var.points += 1;
+                                    points.setText("Points: "+Var.points);
+                                    System.out.println("disabled");
+                                } else {
+                                    cb.setDisable(false);
+                                    System.out.println("enabled");
+                                }
+                            } else if (freq.equals("Weekly")) {
+                                if (cal.get(Calendar.DAY_OF_YEAR) - lastdate >=30) {
+                                    cb.setDisable(true);
+                                    lastdate = cal.get(Calendar.DAY_OF_YEAR);
+                                    Var.points += 1;
+                                    points.setText("Points: "+Var.points);
+                                    System.out.println("disabled");
+                                } else {
+                                    cb.setDisable(false);
+                                    System.out.println("enabled");
+                                }
+                            }
                         }
                     });
+
+
+                    stat3.executeUpdate("update habits set lastdate = "+cal.get(Calendar.DAY_OF_YEAR)+" where id = "+Var.id+" AND name = '"+name+"'");
+
+                    if (freq.equals("Daily")) {
+                        if (cal.get(Calendar.DAY_OF_YEAR) - Integer.parseInt(s.getString("lastdate")) >= 1) {
+                            cb.setDisable(false);
+                            System.out.println("enabled A");
+                        }
+                    } else if (freq.equals("Weekly")) {
+                        if (cal.get(Calendar.DAY_OF_YEAR) - Integer.parseInt(s.getString("lastdate")) >= 7) {
+                            cb.setDisable(false);
+                            System.out.println("enabled b");
+                        }
+                    } else if (freq.equals("Biweekly")) {
+                        if (cal.get(Calendar.DAY_OF_YEAR) - Integer.parseInt(s.getString("lastdate")) >= 14) {
+                            cb.setDisable(false);
+                            System.out.println("enabled c");
+                        }
+                    } else if (freq.equals("Weekly")) {
+                        if (cal.get(Calendar.DAY_OF_YEAR) - Integer.parseInt(s.getString("lastdate")) >= 30) {
+                            cb.setDisable(false);
+                            System.out.println("enabled d");
+                        }
+                    }
 
 
 

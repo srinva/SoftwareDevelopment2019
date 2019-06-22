@@ -28,16 +28,20 @@ public class NewHabitController {
     @FXML
     public JFXButton close;
 
+    int streak;
+
     Calendar cal = Calendar.getInstance();
 
     public void insertValues(Statement s) {
+        int day = cal.get(Calendar.DAY_OF_YEAR);
+        int tday = day-1;
         try {
             s.executeUpdate("insert into habits (id, name, freq, streak, lastdate, number) values" +
                     "(" + Var.id + ", " +
                     " '" + habName.getText() + "', " +
                     "'" + freq + "', " +
-                    "'" + cal.get(Calendar.DAY_OF_YEAR) + "'," +
-                    "'" + cal.get(Calendar.DAY_OF_YEAR) + "'," +
+                    "'" + 0 + "'," +
+                    "'" + tday + "'," +
                     "'" + 0 + "')");
         } catch (SQLException e) {
             e.printStackTrace();
@@ -73,7 +77,6 @@ public class NewHabitController {
 
     @FXML
     public void onHabitClicked() throws SQLException, IOException {
-
 
         System.out.println("yuh");
         Connection conn = null;
