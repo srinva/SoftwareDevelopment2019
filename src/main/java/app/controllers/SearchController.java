@@ -50,8 +50,10 @@ public class SearchController implements Initializable {
             e.printStackTrace();
         }
         Statement statement = null;
+        Statement statement2 = null;
         try {
             statement = conn.createStatement();
+            statement2 = conn.createStatement();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -73,6 +75,7 @@ public class SearchController implements Initializable {
                             .hideAfter(Duration.seconds(5))
                             .text("Keep going!")
                             .showConfirm();
+                    statement2.executeUpdate("insert into friends (id, fid) values ("+Var.id+", "+userField.getText()+")");
                     Var.friends.add(""+rs.getString("username")+": "+rs.getInt("points")+" points");
                 }
 

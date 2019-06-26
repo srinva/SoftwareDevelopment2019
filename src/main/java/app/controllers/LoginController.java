@@ -8,11 +8,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import main.java.app.Var;
 
+import java.awt.*;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -48,33 +50,37 @@ public class LoginController {
 
     @FXML
     public void onLoginClicked() throws SQLException {
+        Var.friends.clear();
         Connection conn = null;
         try {
 
             conn = DriverManager.getConnection(Var.URL, Var.DBU, Var.DBP);
             Statement statement = conn.createStatement();
-
+            Statement statement1 = conn.createStatement();
 
             ResultSet rs = statement.executeQuery("select * from users");
+            ResultSet rs2 = statement1.executeQuery("select * from friends");
             while(rs.next())
             {
                 // read the result set
                 if (userField.getText().equals(rs.getString("username"))) {
                     System.out.println("username found");
-                    if (passField.getText().equals(rs.getString("password"))) {
-
+                    if (passField.getText().equals(Crypto.decryptPassword(rs.getString("password")))) {
                         Var.id = rs.getString("id");
-                        Var.password = rs.getString("password");
+                        Var.password = Crypto.decryptPassword(rs.getString("password"));
                         Var.username = rs.getString("username");
                         Var.points = rs.getInt("points");
+
                         Stage stage = (Stage) lightBkg.getScene().getWindow();
                         stage.close();
                         System.out.println("Succesfully logged in");
+
                         Parent dash = FXMLLoader.load(getClass().getResource("/main/java/resources/scene/Dashboard.fxml"));
                         Stage primaryStage = new Stage();
                         Scene scene = new Scene(dash, 610, 409);
                         primaryStage.setScene(scene);
-                        primaryStage.initStyle(StageStyle.UNDECORATED);
+                        primaryStage.initStyle(StageStyle.UNIFIED);
+                        primaryStage.getIcons().add(new Image("main/java/resources/img/icon.png"));
                         primaryStage.show();
 
                         break;

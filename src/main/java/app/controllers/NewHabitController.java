@@ -42,7 +42,8 @@ public class NewHabitController {
                     "'" + freq + "', " +
                     "'" + 0 + "'," +
                     "'" + tday + "'," +
-                    "'" + 0 + "')");
+                    "'" + (cal.get(Calendar.DAY_OF_YEAR)-1) + "')");
+            System.out.println(tday);
         } catch (SQLException e) {
             e.printStackTrace();
         }

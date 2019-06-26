@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #FAF8F5;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.PointDistributionController">
+    <children>
+        <JFXTabPane fx:id="tabpane" layoutX="277.0" layoutY="158.0" prefHeight="408.0" prefWidth="711.0" style="-fx-background-color: #BDAF98; -fx-border-color: ;">
+            <tabs>
+                <Tab fx:id="pietab" onSelectionChanged="#tabchange" style="-fx-background-color: #67A09E;" text="PIE CHART">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="624.0">
+                            <children>
+                                <PieChart fx:id="piec" layoutY="4.0" prefHeight="363.0" prefWidth="350.0" title="ACTUAL POINTS" />
+                        <PieChart fx:id="piec1" layoutX="361.0" layoutY="4.0" prefHeight="363.0" prefWidth="350.0" title="PROJECTED POINTS" />
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="bartab" onSelectionChanged="#tabchange" style="-fx-background-color: #67A09E;" text="BAR GRAPH">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1035.0">
+                            <children>
+                                <BarChart fx:id="barc" layoutX="6.0" layoutY="9.0" prefHeight="354.0" prefWidth="350.0" title="    ACTUAL POINTS">
+                                    <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                    </xAxis>
+                                    <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                    </yAxis>
+                                </BarChart>
+                        <BarChart fx:id="barc1" layoutX="356.0" layoutY="9.0" prefHeight="354.0" prefWidth="350.0" title="     PROJECTED POINTS">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis prefHeight="313.0" prefWidth="34.0" side="LEFT" />
+                           </yAxis>
+                        </BarChart>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </JFXTabPane>
+        <ImageView fitHeight="135.0" fitWidth="665.0" layoutX="168.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/pointdist.png" />
+            </image>
+        </ImageView>
+      <AnchorPane layoutX="14.0" layoutY="158.0" prefHeight="408.0" prefWidth="255.0" style="-fx-background-color: #BDAF98; -fx-border-radius: 3px;">
+         <children>
+            <Label fx:id="pointdistlabel" layoutX="14.0" layoutY="22.0" text="POINT DISTRIBUTION" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="habit2" layoutX="17.0" layoutY="146.0" text="HABIT TWO" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="habit3" layoutX="17.0" layoutY="196.0" text="HABIT THREE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="habit4" layoutX="17.0" layoutY="246.0" text="HABIT FOUR" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="habit1" layoutX="17.0" layoutY="96.0" text="HABIT ONE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="habit5" layoutX="17.0" layoutY="296.0" text="HABIT FIVE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="habit6" layoutX="17.0" layoutY="346.0" text="HABIT SIX" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="habit2rat" layoutX="174.0" layoutY="146.0" text="10/10" textFill="WHITE" />
+            <Label fx:id="habit3rat" layoutX="174.0" layoutY="196.0" text="10/10" textFill="WHITE" />
+            <Label fx:id="habit4rat" layoutX="174.0" layoutY="246.0" text="10/10" textFill="WHITE" />
+            <Label fx:id="habit1rat" layoutX="174.0" layoutY="96.0" text="10/10" textFill="WHITE" />
+            <Label fx:id="habit5rat" layoutX="174.0" layoutY="296.0" text="10/10" textFill="WHITE" />
+            <Label fx:id="habit6rat" layoutX="174.0" layoutY="346.0" text="10/10" textFill="WHITE" />
+            <Label fx:id="keylabel" layoutX="52.0" layoutY="54.0" text="Actual / Projected" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

@@ -45,7 +45,8 @@ public class LandingPageController implements Initializable {
         Stage primaryStage = new Stage();
         Scene scene = new Scene(log, 600, 400);
         primaryStage.setScene(scene);
-        primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.initStyle(StageStyle.UNIFIED);
+        primaryStage.getIcons().add(new Image("main/java/resources/img/icon.png"));
         primaryStage.show();
     }
 
@@ -55,7 +56,8 @@ public class LandingPageController implements Initializable {
         Stage primaryStage = new Stage();
         Scene scene = new Scene(log, 600, 400);
         primaryStage.setScene(scene);
-        primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.initStyle(StageStyle.UNIFIED);
+        primaryStage.getIcons().add(new Image("main/java/resources/img/icon.png"));
         primaryStage.show();
     }
 

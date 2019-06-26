@@ -1,6 +1,7 @@
 package main.java.app.controllers;
 
 import com.jfoenix.controls.*;
+import com.sun.org.apache.regexp.internal.RE;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -16,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -56,9 +58,8 @@ public class DashboardController implements Initializable {
 
     Calendar cal = Calendar.getInstance();
 
-    Timeline tl = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
+    Timeline tl = new Timeline(new KeyFrame(Duration.millis(1250), event -> {
         leaderboard.getItems().clear();
-        leaderboard.getItems().add(new Label("Leaderboard"));
         for(int i = 0; i<Var.friends.size(); i++) {
             Label lbl = new Label(""+Var.friends.get(i));
             leaderboard.getItems().add(lbl);
@@ -80,7 +81,22 @@ public class DashboardController implements Initializable {
     }
 
 
-
+    @FXML
+    public void onDist() {
+        System.out.println("yuh");
+        Parent newh = null;
+        try {
+            newh = FXMLLoader.load(getClass().getResource("/main/java/resources/scene/PointDistribution.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Stage primaryStage = new Stage();
+        Scene scene = new Scene(newh, 1000, 600);
+        primaryStage.setScene(scene);
+        primaryStage.initStyle(StageStyle.UNIFIED);
+        primaryStage.getIcons().add(new Image("main/java/resources/img/icon.png"));
+        primaryStage.show();
+    }
 
     @FXML
     public void habitOne() {
@@ -95,6 +111,8 @@ public class DashboardController implements Initializable {
         Stage primaryStage = new Stage();
         Scene scene = new Scene(newh, 300, 300);
         primaryStage.setScene(scene);
+        primaryStage.initStyle(StageStyle.UNIFIED);
+        primaryStage.getIcons().add(new Image("main/java/resources/img/icon.png"));
         primaryStage.show();
     }
 
@@ -109,6 +127,8 @@ public class DashboardController implements Initializable {
         Stage primaryStage = new Stage();
         Scene scene = new Scene(newh, 300, 160);
         primaryStage.setScene(scene);
+        primaryStage.initStyle(StageStyle.UNIFIED);
+        primaryStage.getIcons().add(new Image("main/java/resources/img/icon.png"));
         primaryStage.show();
     }
 
@@ -124,6 +144,8 @@ public class DashboardController implements Initializable {
         Stage primaryStage = new Stage();
         Scene scene = new Scene(newh, 300, 160);
         primaryStage.setScene(scene);
+        primaryStage.initStyle(StageStyle.UNIFIED);
+        primaryStage.getIcons().add(new Image("main/java/resources/img/icon.png"));
         primaryStage.show();
     }
 
@@ -139,28 +161,37 @@ public class DashboardController implements Initializable {
         }
         Statement stat = null;
         Statement stat2 = null;
-        Statement stat3 = null;
+
         try {
             stat = con.createStatement();
             stat2 = con.createStatement();
-            stat3 = con.createStatement();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         //insertValues(statement);
         ResultSet s = null;
+        ResultSet s1 = null;
         try {
             s = stat.executeQuery("select * from habits");
+            s1 = stat2.executeQuery("select * from users");
         } catch (SQLException e) {
             e.printStackTrace();
         }
         ;
         try {
+
+            while (s1.next()) {
+                if (Var.id.equals(s1.getString("id"))) {
+                    Var.points = Integer.parseInt(s1.getString("points"));
+                }
+            }
+
             while(s.next())
             {
 
                 // read the result set
                 if (Var.id.equals(s.getString("id"))) {
+
                     JFXButton cb = new JFXButton("" + s.getString("name"));
                     cb.setStyle("-fx-background-color: #646365; ");
                     cb.setTextFill(Color.WHITE);
@@ -173,85 +204,100 @@ public class DashboardController implements Initializable {
                         @Override
                         public void handle(ActionEvent event) {
 
-                            if (freq.equals("Daily")) {
-                                if (cal.get(Calendar.DAY_OF_YEAR) - lastdate >=1) {
-                                    cb.setDisable(true);
-                                    lastdate = cal.get(Calendar.DAY_OF_YEAR);
-                                    Var.points += 1;
-                                    points.setText("Points: "+Var.points);
-                                    System.out.println("disabled");
-                                } else {
-                                    cb.setDisable(false);
-                                    System.out.println("enabled");
-                                }
-                            } else if (freq.equals("Weekly")) {
-                                if (cal.get(Calendar.DAY_OF_YEAR) - lastdate >=7) {
-                                    cb.setDisable(true);
-                                    lastdate = cal.get(Calendar.DAY_OF_YEAR);
-                                    Var.points += 1;
-                                    points.setText("Points: "+Var.points);
-                                    System.out.println("disabled");
-                                } else {
-                                    cb.setDisable(false);
-                                    System.out.println("enabled");
-                                }
-                            } else if (freq.equals("Biweekly")) {
-                                if (cal.get(Calendar.DAY_OF_YEAR) - lastdate >=14) {
-                                    cb.setDisable(true);
-                                    lastdate = cal.get(Calendar.DAY_OF_YEAR);
-                                    Var.points += 1;
-                                    points.setText("Points: "+Var.points);
-                                    System.out.println("disabled");
-                                } else {
-                                    cb.setDisable(false);
-                                    System.out.println("enabled");
-                                }
-                            } else if (freq.equals("Weekly")) {
-                                if (cal.get(Calendar.DAY_OF_YEAR) - lastdate >=30) {
-                                    cb.setDisable(true);
-                                    lastdate = cal.get(Calendar.DAY_OF_YEAR);
-                                    Var.points += 1;
-                                    points.setText("Points: "+Var.points);
-                                    System.out.println("disabled");
-                                } else {
-                                    cb.setDisable(false);
-                                    System.out.println("enabled");
-                                }
+
+                            Calendar c = Calendar.getInstance();
+                            Connection conn = null;
+                            try {
+                                conn = DriverManager.getConnection(Var.URL, Var.DBU, Var.DBP);
+                            } catch (SQLException e) {
+                                e.printStackTrace();
                             }
+                            Statement stat3 = null;
+                            Statement stat4 = null;
+                            Statement stat5 = null;
+                            Statement stat6 = null;
+                            try {
+                                stat3 = conn.createStatement();
+                                stat4 = conn.createStatement();
+                                stat5 = conn.createStatement();
+                                stat6 = conn.createStatement();
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            }
+                            ResultSet rs = null;
+                            ResultSet rs1 = null;
+                            try {
+                                rs = stat3.executeQuery("select * from habits");
+                                rs1 = stat6.executeQuery("select * from users");
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            }
+
+                            try {
+                                while(rs.next()) {
+
+                                    if (Var.id.equals(rs.getString("id"))) {
+
+                                        /*if (rs.getString("freq").equals("Daily")) {
+                                            if (cal.get(Calendar.DAY_OF_YEAR) - (Integer.parseInt(rs.getString("lastdate"))) >= 1) {
+
+                                                stat5.executeUpdate("update habits set lastdate = '" +
+                                                        (c.get(Calendar.DAY_OF_YEAR))
+                                                        + "' where name = '" + name + "' AND id = " + Var.id);
+                                                cb.setDisable(true);
+                                            }
+                                        }*/
+
+                                        try {
+
+                                            stat4.executeUpdate("update habits set streak = '" +
+                                                    ((Integer.parseInt(rs.getString("streak"))) + 1)
+                                                    + "' where name = '" + name + "' AND id = " + Var.id);
+
+                                        } catch (SQLException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+
+                                }
+
+                                Var.points += 1;
+                                points.setText("Points: "+Var.points);
+                                stat5.executeUpdate("update users set points = "+Var.points+" where id = "+Var.id);
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            }
+
+
+                            try {
+                                conn.close();
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            }
+                            try {
+                                rs.close();
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            }
+
                         }
                     });
 
+                    //stat4.executeUpdate("set SQL_SAFE_UPDATES = 0");
+                    //stat3.executeUpdate("update habits set lastdate = "+200+" where id = "+Var.id+" AND name = '"+name+"'");
 
-                    stat3.executeUpdate("update habits set lastdate = "+cal.get(Calendar.DAY_OF_YEAR)+" where id = "+Var.id+" AND name = '"+name+"'");
-
-                    if (freq.equals("Daily")) {
-                        if (cal.get(Calendar.DAY_OF_YEAR) - Integer.parseInt(s.getString("lastdate")) >= 1) {
+                    /*if (s.getString("freq").equals("Daily")) {
+                        if (Integer.parseInt(s.getString("lastdate")) >= 1) {
                             cb.setDisable(false);
-                            System.out.println("enabled A");
+                        } else {
+                            cb.setDisable(true);
                         }
-                    } else if (freq.equals("Weekly")) {
-                        if (cal.get(Calendar.DAY_OF_YEAR) - Integer.parseInt(s.getString("lastdate")) >= 7) {
-                            cb.setDisable(false);
-                            System.out.println("enabled b");
-                        }
-                    } else if (freq.equals("Biweekly")) {
-                        if (cal.get(Calendar.DAY_OF_YEAR) - Integer.parseInt(s.getString("lastdate")) >= 14) {
-                            cb.setDisable(false);
-                            System.out.println("enabled c");
-                        }
-                    } else if (freq.equals("Weekly")) {
-                        if (cal.get(Calendar.DAY_OF_YEAR) - Integer.parseInt(s.getString("lastdate")) >= 30) {
-                            cb.setDisable(false);
-                            System.out.println("enabled d");
-                        }
-                    }
-
-
+                    }*/
 
                     listView.getItems().add(cb);
                     listView.getItems().add(lbl);
-                    points.setText("Points: "+Var.points);
-                    stat2.executeUpdate("update users set points = "+Var.points+" where id = "+Var.id);
+
+
 
                 }
 
@@ -274,9 +320,63 @@ public class DashboardController implements Initializable {
 
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources){
         leaderboard.getItems().clear();
-        leaderboard.getItems().add(new Label("Leaderboard"));
+        Var.friends.clear();
+        Connection con = null;
+        try {
+            con = DriverManager.getConnection(Var.URL, Var.DBU, Var.DBP);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        Statement s = null;
+        try {
+            s = con.createStatement();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        Statement s2 = null;
+        try {
+            s2 = con.createStatement();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        ResultSet rs = null;
+        try {
+            rs = s.executeQuery("select * from friends");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        ResultSet rs2 = null;
+        try {
+            rs2 = s2.executeQuery("select * from users");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            while (rs.next()) {
+                rs2 = s2.executeQuery("select * from users");
+                if (rs.getString("id").equals(Var.id)) {
+                    while(rs2.next()) {
+                        if(rs2.getString("id").equals(rs.getString("fid"))) {
+                            Var.friends.add(rs2.getString("username")+": "+rs2.getInt("points")+" points");
+                            System.out.println(Var.friends);
+                        } else {
+                            //System.out.println("oof");
+                        }
+                    }
+                } else {
+                    //System.out.println("ooof");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        for(int i = 0; i<Var.friends.size(); i++) {
+            Label lbl = new Label(""+Var.friends.get(i));
+            leaderboard.getItems().add(lbl);
+
+        }
         tl.setCycleCount(Animation.INDEFINITE);
         tl.play();
     }
