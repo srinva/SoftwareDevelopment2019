@@ -16,7 +16,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/main/java/resources/scene/LandingPage.fxml"));
         primaryStage.setTitle("Login");
         primaryStage.setScene(new Scene(root, 600, 400));
-        primaryStage.initStyle(StageStyle.UNIFIED);
+        primaryStage.initStyle(StageStyle.DECORATED);
         primaryStage.getIcons().add(new Image("main/java/resources/img/icon.png"));
         primaryStage.show();
     }
