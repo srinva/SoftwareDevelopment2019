@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="637.0" style="-fx-background-color: #FAF8F5;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.DashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="637.0" style="-fx-background-color: #FAF8F5;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.app.controllers.DashboardController">
 
    <children>
       <JFXButton fx:id="signOut" layoutX="14.0" layoutY="10.0" onAction="#onOut" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: #646365;" text="Sign Out" textFill="WHITE">
@@ -23,7 +23,7 @@
             <Image url="@../img/dashboard.png" />
          </image>
       </ImageView>
-      <Label fx:id="points" layoutX="520.0" layoutY="22.0" style="-fx-background-color: nome;" text="Points:" textFill="#646365" />
+      <Label fx:id="points" layoutX="520.0" layoutY="22.0" text="Points:" textFill="#646365" />
       <JFXButton fx:id="calc" layoutX="10.0" layoutY="60.0" minHeight="28.0" minWidth="81.0" onAction="#onCalc" prefHeight="29.0" prefWidth="129.0" style="-fx-background-color: #67A09E; -fx-min-height: 29; -fx-min-width: 100; -fx-border-radius: none;" text="CALCULATE" />
       <JFXButton fx:id="search" layoutX="10.0" layoutY="335.0" minHeight="15.0" onAction="#onSearch" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #67A09E; -fx-min-height: 29; -fx-min-width: 100; -fx-border-radius: none;" text="ADD FRIEND" />
       <JFXListView fx:id="leaderboard" layoutX="10.0" layoutY="158.0" prefHeight="162.0" prefWidth="129.0" style="-fx-background-color: #BDAF98;" stylesheets="@../css/listview.css" />

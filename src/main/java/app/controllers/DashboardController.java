@@ -83,7 +83,6 @@ public class DashboardController implements Initializable {
 
     @FXML
     public void onDist() {
-        System.out.println("yuh");
         Parent newh = null;
         try {
             newh = FXMLLoader.load(getClass().getResource("/main/java/resources/scene/PointDistribution.fxml"));

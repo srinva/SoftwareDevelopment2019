@@ -100,123 +100,149 @@ public class PointDistributionController implements Initializable {
                         FXCollections.observableArrayList();
                 int i = 0;
                 while (rs.next()) {
-                    switch (i) {
-                        case 0:
-                            habit1.setText(rs.getString("name"));
-                            switch (rs.getString("freq")) {
-                                case "Daily": habit1rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))));
+                    if (rs.getString("id").equals(Var.id)) {
+                        switch (i) {
+                            case 0:
+                                habit1.setText(rs.getString("name"));
+                                switch (rs.getString("freq")) {
+                                    case "Daily":
+                                        habit1rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))));
+                                        break;
+                                    case "Weekly":
+                                        habit1rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 7);
+                                        break;
+                                    case "Biweekly":
+                                        habit1rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 14);
+                                        break;
+                                    case "Monthly":
+                                        habit1rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 30);
+                                        break;
+                                    default:
+                                        break;
+                                }
                                 break;
-                                case "Weekly": habit1rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 7);
+                            case 1:
+                                habit2.setText(rs.getString("name"));
+                                switch (rs.getString("freq")) {
+                                    case "Daily":
+                                        habit2rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))));
+                                        break;
+                                    case "Weekly":
+                                        habit2rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 7);
+                                        break;
+                                    case "Biweekly":
+                                        habit2rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 14);
+                                        break;
+                                    case "Monthly":
+                                        habit2rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 30);
+                                        break;
+                                    default:
+                                        break;
+                                }
                                 break;
-                                case "Biweekly": habit1rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 14);
+                            case 2:
+                                habit3.setText(rs.getString("name"));
+                                switch (rs.getString("freq")) {
+                                    case "Daily":
+                                        habit3rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))));
+                                        break;
+                                    case "Weekly":
+                                        habit3rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 7);
+                                        break;
+                                    case "Biweekly":
+                                        habit3rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 14);
+                                        break;
+                                    case "Monthly":
+                                        habit3rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 30);
+                                        break;
+                                    default:
+                                        break;
+                                }
                                 break;
-                                case "Monthly": habit1rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 30);
+                            case 3:
+                                habit4.setText(rs.getString("name"));
+                                switch (rs.getString("freq")) {
+                                    case "Daily":
+                                        habit4rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))));
+                                        break;
+                                    case "Weekly":
+                                        habit4rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 7);
+                                        break;
+                                    case "Biweekly":
+                                        habit4rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 14);
+                                        break;
+                                    case "Monthly":
+                                        habit4rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 30);
+                                        break;
+                                    default:
+                                        break;
+                                }
                                 break;
-                                default:
-                                    break;
-                            }
-                            break;
-                        case 1:
-                            habit2.setText(rs.getString("name"));
-                            switch (rs.getString("freq")) {
-                                case "Daily": habit2rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))));
-                                    break;
-                                case "Weekly": habit2rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 7);
-                                    break;
-                                case "Biweekly": habit2rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 14);
-                                    break;
-                                case "Monthly": habit2rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 30);
-                                    break;
-                                default:
-                                    break;
-                            }
-                            break;
-                        case 2:
-                            habit3.setText(rs.getString("name"));
-                            switch (rs.getString("freq")) {
-                                case "Daily": habit3rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))));
-                                    break;
-                                case "Weekly": habit3rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 7);
-                                    break;
-                                case "Biweekly": habit3rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 14);
-                                    break;
-                                case "Monthly": habit3rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 30);
-                                    break;
-                                default:
-                                    break;
-                            }
-                            break;
-                        case 3:
-                            habit4.setText(rs.getString("name"));
-                            switch (rs.getString("freq")) {
-                                case "Daily": habit4rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))));
-                                    break;
-                                case "Weekly": habit4rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 7);
-                                    break;
-                                case "Biweekly": habit4rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 14);
-                                    break;
-                                case "Monthly": habit4rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 30);
-                                    break;
-                                default:
-                                    break;
-                            }
-                            break;
-                        case 4:
-                            habit5.setText(rs.getString("name"));
-                            switch (rs.getString("freq")) {
-                                case "Daily": habit5rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))));
-                                    break;
-                                case "Weekly": habit5rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 7);
-                                    break;
-                                case "Biweekly": habit5rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 14);
-                                    break;
-                                case "Monthly": habit5rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 30);
-                                    break;
-                                default:
-                                    break;
-                            }
-                            break;
-                        case 5:
-                            habit6.setText(rs.getString("name"));
-                            switch (rs.getString("freq")) {
-                                case "Daily": habit6rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))));
-                                    break;
-                                case "Weekly": habit6rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 7);
-                                    break;
-                                case "Biweekly": habit6rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 14);
-                                    break;
-                                case "Monthly": habit6rat.setText(rs.getString("streak") + "/" +
-                                        (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 30);
-                                    break;
-                                default:
-                                    break;
-                            }
-                            break;
-                        default:
-                            break;
+                            case 4:
+                                habit5.setText(rs.getString("name"));
+                                switch (rs.getString("freq")) {
+                                    case "Daily":
+                                        habit5rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))));
+                                        break;
+                                    case "Weekly":
+                                        habit5rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 7);
+                                        break;
+                                    case "Biweekly":
+                                        habit5rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 14);
+                                        break;
+                                    case "Monthly":
+                                        habit5rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 30);
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                break;
+                            case 5:
+                                habit6.setText(rs.getString("name"));
+                                switch (rs.getString("freq")) {
+                                    case "Daily":
+                                        habit6rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))));
+                                        break;
+                                    case "Weekly":
+                                        habit6rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 7);
+                                        break;
+                                    case "Biweekly":
+                                        habit6rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 14);
+                                        break;
+                                    case "Monthly":
+                                        habit6rat.setText(rs.getString("streak") + "/" +
+                                                (Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - Integer.parseInt(rs.getString("number"))) / 30);
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                break;
+                            default:
+                                break;
+                        }
                     }
 
                     if (rs.getString("id").equals(Var.id)) {
