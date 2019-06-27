@@ -81,6 +81,7 @@ public class LoginController {
                         primaryStage.setScene(scene);
                         primaryStage.initStyle(StageStyle.UNIFIED);
                         primaryStage.getIcons().add(new Image("main/java/resources/img/icon.png"));
+                        primaryStage.setResizable(false);
                         primaryStage.show();
 
                         break;
