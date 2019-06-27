@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="SoftwareDevelopment2019">
+    <output-path>$PROJECT_DIR$/../SoftwareDevelopment2019/out/artifacts/SoftwareDevelopment2019</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="main.java.app.Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="SoftwareDevelopment2019.jar">
+        <element id="module-output" name="SoftwareDevelopment2019" />
+      </element>
+    </root>
+  </artifact>
+</component>

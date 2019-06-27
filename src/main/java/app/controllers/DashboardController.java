@@ -93,7 +93,7 @@ public class DashboardController implements Initializable {
         Stage primaryStage = new Stage();
         Scene scene = new Scene(newh, 1000, 600);
         primaryStage.setScene(scene);
-        primaryStage.initStyle(StageStyle.UNIFIED);
+        primaryStage.initStyle(StageStyle.DECORATED);
         primaryStage.getIcons().add(new Image("main/java/resources/img/icon.png"));
         primaryStage.show();
     }
@@ -111,7 +111,7 @@ public class DashboardController implements Initializable {
         Stage primaryStage = new Stage();
         Scene scene = new Scene(newh, 300, 300);
         primaryStage.setScene(scene);
-        primaryStage.initStyle(StageStyle.UNIFIED);
+        primaryStage.initStyle(StageStyle.DECORATED);
         primaryStage.getIcons().add(new Image("main/java/resources/img/icon.png"));
         primaryStage.show();
     }
@@ -127,7 +127,7 @@ public class DashboardController implements Initializable {
         Stage primaryStage = new Stage();
         Scene scene = new Scene(newh, 300, 160);
         primaryStage.setScene(scene);
-        primaryStage.initStyle(StageStyle.UNIFIED);
+        primaryStage.initStyle(StageStyle.DECORATED);
         primaryStage.getIcons().add(new Image("main/java/resources/img/icon.png"));
         primaryStage.show();
     }
@@ -144,7 +144,7 @@ public class DashboardController implements Initializable {
         Stage primaryStage = new Stage();
         Scene scene = new Scene(newh, 300, 160);
         primaryStage.setScene(scene);
-        primaryStage.initStyle(StageStyle.UNIFIED);
+        primaryStage.initStyle(StageStyle.DECORATED);
         primaryStage.getIcons().add(new Image("main/java/resources/img/icon.png"));
         primaryStage.show();
     }
